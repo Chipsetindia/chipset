@@ -1,0 +1,11 @@
+V19 changes:
+- Daily withdrawal displays: Withdrawal: Daily • Now
+- Weekly/monthly when currently eligible display only: Withdrawal: Weekly / Withdrawal: Monthly
+- Weekly/monthly when locked display: Withdrawal: Weekly • Next available: DD Mon YYYY / Monthly • Next available: DD Mon YYYY
+- No SQL change required for this UI wording fix.
+
+Referral verification from current SQL:
+- Admin > Referrals > Referral & Bonus Settings > Referral Bonus (%) controls the percentage.
+- Current default is 10% if not changed.
+- The current referral reward is credited to the REFERRER only, on the referred customer's first qualifying approved investment.
+- It is NOT currently credited to both users.

@@ -1,0 +1,21 @@
+CHIPSET V35 LIVE PRODUCTION STATUS
+
+This package is based on CHIPSET_FINAL_PRODUCTION_V34_FINAL_AUDITED.zip.
+
+LIVE DATABASE:
+- Supabase project ref: bhwswfjqidwgbvdrzley
+- V35 agreement + security hardening has already been applied to the live database.
+- Existing approved investments were backfilled into investment_agreements.
+- Daily earning cron remains active: chipset-daily-earnings (*/5 * * * *).
+
+FRONTEND:
+- payment.html/payment.js require terms acknowledgement before payment proof submission.
+- payment.js uses DB plan data for plan name/amount.
+- dashboard.html/dashboard.js show Investment Agreements.
+- agreement.html/agreement.js reads customer-owned immutable agreement snapshots.
+- admin.js uses the secured admin status/wallet RPCs.
+
+IMPORTANT:
+- Do NOT run legacy SQL files such as FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql or old earning patches after the final daily-earning timeline fix.
+- The V35 SQL file is included only as a reference/backup because it has already been applied to the live DB. Do not execute it again unless intentionally re-deploying after a fresh database restore.
+- Supabase leaked-password protection is a dashboard Auth setting and remains to be enabled separately if desired.

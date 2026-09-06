@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Invest & Pay | Chipset</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="siteHeader"><div class="container nav"><a class="brand" href="index.html"><span class="chipIcon">▣</span><span>CHIPSET<small>POWERING THE DIGITAL FUTURE</small></span></a><nav><a href="index.html">HOME</a><a href="index.html#plans">INVESTMENT PLAN</a><a href="index.html#contact">CONTACT</a></nav><a class="btn" href="login.html">LOGIN <b>→</b></a></div></header>
+<main class="paymentPage"><div class="container narrow"><span class="eyebrow">DIRECT PAYMENT</span><h1>Invest in <span id="planName">Investment Plan</span></h1><p class="paymentIntro">Pay by UPI and upload your payment screenshot. An admin will verify it before your payment is marked approved.</p><div class="paymentCard"><div class="paymentAmount"><small>SELECTED INVESTMENT</small><strong id="amount">₹—</strong><small style="display:block;margin-top:8px">PAYMENT ID: <b id="paymentRef">Generating…</b></small></div><div id="planTerms" class="agreementNotice" style="margin-top:14px"><b>Plan terms</b><p id="planTermsText" class="muted" style="margin:6px 0 0">Loading approved plan terms…</p></div><div class="paymentMethods"><div id="paymentNotice" class="paymentNotice"></div><div class="upiBox"><b>UPI Payment</b><p>UPI ID: <strong id="upiIdText">—</strong> <button id="copyUpi" class="smallBtn" type="button">COPY</button></p><div id="qrWrap" style="text-align:center;margin:12px 0"><img id="upiQr" alt="UPI QR Code" style="max-width:240px;width:100%;border-radius:12px"></div><button id="upiPay" class="btn" type="button">PAY VIA UPI →</button><button id="upiAppPay" class="btn" type="button" style="margin-top:10px;">OPEN UPI APP →</button><p id="upiAppHint" class="muted" style="margin:8px 0 0;font-size:12px;">On mobile, tap this to open your installed UPI app. If your phone shows an app chooser, select your UPI app.</p></div>
+<div id="loggedInNotice" class="paymentNotice" style="display:none"></div><form id="paymentProofForm" class="addPlanForm" style="margin-top:18px"><label>Customer Name<input id="customerName" required maxlength="100" autocomplete="name"></label><label>Phone Number<input id="customerPhone" required type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel"></label><label>Email<input id="customerEmail" type="email" autocomplete="email"></label><label>UTR / Transaction ID<input id="utr" maxlength="80" placeholder="Optional"></label><label>Payment Screenshot <input id="slip" type="file" required accept="image/*,.pdf"></label><label>Note <textarea id="paymentNote" rows="3" placeholder="Optional note"></textarea></label><label class="agreementCheck"><input id="termsAccepted" type="checkbox" required> I have reviewed the selected plan details and risk disclosure. I understand that returns are not guaranteed and investment involves risk.</label><button class="btn" id="submitProof" type="submit">SUBMIT PAYMENT PROOF →</button><p id="proofMsg" class="muted"></p></form>
+<div class="paymentHelp"><a id="payWhatsapp" class="outline" target="_blank" rel="noopener">Ask on WhatsApp</a><a href="track-payment.html" class="outline">Track Payment</a><a href="index.html#plans" class="outline">Back to Plans</a></div></div></div></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="payment.js"></script><div id="chipset-upi-app-wrap" style="display:none;margin-top:14px;">
+<button id="chipset-upi-app-btn" type="button" style="width:100%;padding:13px 16px;border:0;border-radius:10px;cursor:pointer;font-weight:700;">Pay with UPI App</button>
+<div style="font-size:12px;margin-top:7px;opacity:.75;">On mobile this opens an installed UPI app. If it does not open, use the QR code.</div>
+</div>
+<script>
+(function(){
+function getText(sel){
+ for(const s of sel){const e=document.querySelector(s);if(e){const v=(e.value??e.textContent??"").trim();if(v)return v;}}
+ return "";
+}
+function setup(){
+ const btn=document.getElementById("chipset-upi-app-btn"),wrap=document.getElementById("chipset-upi-app-wrap");
+ if(!btn||!wrap)return;
+ const amount=(getText(["#amount","#payment-amount","[name=amount]","[data-amount]","#total","[data-total]"]).replace(/[^\\d.]/g,""))||window.paymentAmount||window.amount||"";
+ const vpa=getText(["#upi-id","#upiId","[name=upi_id]","[name=upiId]","[data-upi-id]"])||window.upiId||window.UPI_ID||"";
+ if(!vpa||!amount)return;
+ wrap.style.display="";
+ const url="upi://pay?"+new URLSearchParams({pa:String(vpa),pn:"CHIPSET",am:String(amount),cu:"INR"}).toString();
+ btn.onclick=()=>{window.location.href=url;};
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",setup);else setup();
+})();
+</script>
+</body></html>

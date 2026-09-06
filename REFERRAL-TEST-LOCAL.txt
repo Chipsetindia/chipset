@@ -1,0 +1,17 @@
+CHIPSET REFERRAL LOCAL TEST
+
+1. In Supabase SQL Editor, run:
+   supabase/REFERRAL-FIRST-TRANSACTION-PERCENT-FIX.sql
+
+2. Set Referral Bonus (%) in Admin > Referral & Bonus Settings.
+   Default is 10%. Minimum deposit remains the existing setting (default 10000).
+
+3. Test:
+   - Customer A logs in and gets referral code.
+   - Open A's referral link in a fresh/incognito window.
+   - Sign up Customer B using that link.
+   - Confirm B profile has referred_by set.
+   - B submits first investment and admin approves it.
+   - A should receive exactly first transaction amount × referral percentage / 100.
+   - Approving another B investment must NOT create another referral reward.
+   - Change referral percentage (e.g. 10 to 5). Existing reward must remain unchanged; only future qualifying first-referral rewards use the new setting.

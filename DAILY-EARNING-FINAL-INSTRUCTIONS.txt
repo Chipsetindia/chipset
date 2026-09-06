@@ -1,0 +1,32 @@
+CHIPSET - FINAL DAILY EARNING BEHAVIOR
+
+1. Run all existing database migrations/patches as before.
+2. Run supabase/DAILY-EARNING-WITHDRAWAL-FINAL.sql LAST.
+3. Do NOT run FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql, FINAL-ADMIN-EARNING-REFERRAL-WALLET.sql, or another older earning processor after the daily patch. Those files also define process_due_plan_earnings().
+4. The final processor credits earnings daily. The admin-selected rate period only converts the configured return into a daily amount.
+
+CALCULATION
+- daily rate: principal * return_percent / 100
+- weekly rate: principal * return_percent / 100 / 7
+- monthly rate: principal * return_percent / 100 / 30
+- fixed weekly: fixed amount / 7 per day
+- fixed monthly: fixed amount / 30 per day
+
+MULTIPLE PLANS
+Every investment_transaction is processed separately. Example:
+Plan A: 10,000 at 5% weekly -> 71.43/day
+Plan B: 20,000 at 10% monthly -> 66.67/day
+Same user total -> 138.10/day
+
+PARTIAL PRINCIPAL WITHDRAWAL
+If Plan A starts at 10,000 and 4,000 principal is approved for withdrawal, future daily earning is based on 6,000 for Plan A. Plan B is unaffected.
+
+AUTOMATIC CREDIT
+The patch schedules a pg_cron job every 5 minutes when pg_cron is available. The job only credits investments whose earning_next_at is due. Each investment advances by exactly 1 day.
+If pg_cron is unavailable, dashboard/admin calls the same processor as a fallback.
+
+V25 NOTE:
+- After running DAILY-EARNING-WITHDRAWAL-FINAL.sql, run supabase/V25-INDIVIDUAL-EARNING-SCHEDULE-FIX.sql once.
+- V25 makes each approved investment schedule its own next earning from verified_at (approval time), falling back to created_at.
+- V25 credits at most one daily earning per investment per processor execution; it does not burst-credit missed days.
+- Do not run FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql or any older process_due_plan_earnings() migration after V25.

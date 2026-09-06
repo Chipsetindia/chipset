@@ -1,0 +1,7 @@
+CHIPSET V39
+
+Fixes dashboard blinking/disappearing caused by the countdown reaching a due timestamp and forcing location.reload().
+The dashboard now stops the countdown at "Credit due — processing…" and does not auto-reload. Daily earning is processed by the live Supabase cron.
+Protected-page auth check now retries transient auth errors before redirecting.
+
+Live backend V38 daily-earning processor hotfix is already applied in Supabase; do not rerun old SQL files blindly.

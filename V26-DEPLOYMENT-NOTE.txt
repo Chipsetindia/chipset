@@ -1,0 +1,11 @@
+CHIPSET V26 DEPLOYMENT
+
+1. Deploy the V26 website files.
+2. In Supabase SQL Editor, run ONLY:
+   supabase/V26-INDIVIDUAL-EARNING-TIMELINE-FIX.sql
+3. Do not re-run FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql.
+4. Keep the existing final daily-earning migration/cron in place.
+
+V26 fixes the earning_next_at timeline so each approved investment uses its own
+investment creation/approval timestamp and preserves already-paid periods.
+Each processor execution credits at most one daily event per investment.

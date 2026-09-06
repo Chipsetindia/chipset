@@ -1,0 +1,20 @@
+STEP 2 - FINAL SQL MIGRATION
+
+Do NOT run the three separate investment SQL files.
+
+Run ONLY this file once in Supabase SQL Editor:
+
+supabase/CHIPSET-INVESTMENT-FINAL-MIGRATION.sql
+
+This combined migration includes:
+- per-investment return percentage
+- maturity Immediate / Choice Days (default 30 days)
+- admin eligible investment amount
+- mandatory eligibility workflow/backend support
+- eligibility expiry
+- principal withdrawal records
+- remaining principal accounting
+- eligibility audit/history
+- customer visibility and matured withdrawal RPCs
+
+After SQL succeeds, hard refresh the website with Ctrl+Shift+R.

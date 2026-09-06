@@ -1,0 +1,130 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Panel | Chipset</title><link rel="stylesheet" href="style.css"><style>html.chipset-auth-checking body{visibility:hidden!important}</style></head><body class="dashBody"><header class="dashHeader"><div class="container nav"><a class="brand" href="index.html"><span class="chipIcon">▣</span><span>CHIPSET<small>ADMIN CONTROL PANEL</small></span></a><div class="dashRight"><button type="button" class="adminNotifyBtn" id="adminNotifyBtn" title="Notifications" aria-label="Notifications"><span class="adminBell">🔔</span><span class="adminNotifyCount" id="adminNotifyCount" hidden>0</span></button><span class="adminBadge">ADMIN</span><button class="logout" id="adminReset">Reset Password</button><button class="logout" id="logout">Logout</button></div></div></header><main class="container dashboard"><div class="welcome"><div><span class="eyebrow">ADMINISTRATION</span><h1>Platform Dashboard</h1><p>Monitor customers, enquiries, plans and activity.</p></div><a class="btn" href="index.html">VIEW WEBSITE →</a></div><nav class="adminTabs" aria-label="Admin sections" role="tablist"><button type="button" role="tab" class="adminTab" data-tab="overview">Overview</button><button type="button" role="tab" class="adminTab" data-tab="payments">Payments</button><button type="button" role="tab" class="adminTab" data-tab="withdrawals">Withdrawals</button><button type="button" role="tab" class="adminTab" data-tab="customers">Customers</button><button type="button" role="tab" class="adminTab" data-tab="plans">Plans</button><button type="button" role="tab" class="adminTab" data-tab="referrals">Referrals</button><button type="button" role="tab" class="adminTab" data-tab="offers">Offers</button><button type="button" role="tab" class="adminTab" data-tab="settings">Settings</button><button type="button" role="tab" class="adminTab" data-tab="visitors">Visitors</button></nav><div class="statGrid adminTabPanel" data-panel="overview"><div><small>TOTAL CUSTOMERS</small><strong id="users">0</strong></div><div><small>ENQUIRIES</small><strong id="enquiriesCount">0</strong></div><div><small>ACTIVE PLANS</small><strong>5</strong></div><div><small>PLATFORM STATUS</small><strong class="green">Online</strong></div></div><section class="panel adminTabPanel visitorAnalyticsTabPanel" data-panel="visitors" id="visitorAnalyticsPanel">
+<div class="panelHead"><div><h2>Website Visitors</h2><span class="muted">Anonymous visitor activity • last 30 days</span></div><div class="visitorActions"><label class="visitorSelectLabel">Visitor list<select id="visitorSessionSelect" aria-label="Select visitor"><option value="">Loading visitors…</option></select></label><button type="button" class="smallBtn" id="refreshVisitors">Refresh</button></div></div>
+<div class="statGrid visitorStatGrid"><div><small>TOTAL VISITORS</small><strong id="visitorTotal">0</strong></div><div><small>ACTIVE NOW</small><strong id="visitorActive">0</strong></div><div><small>PAGE VIEWS</small><strong id="visitorViews">0</strong></div><div><small>MOBILE SHARE</small><strong id="visitorMobile">0%</strong></div></div>
+<div id="visitorDetailCard" class="visitorDetailCard"><p class="muted">Select a visitor from the dropdown to view details.</p></div>
+</section><div class="adminGrid adminOverviewGrid adminTabPanel" data-panel="overview"><section class="panel" id="customersPanel"><div class="panelHead"><h2>Customers</h2></div><div class="tableScroll"><table class="adminTable"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th><th>Action</th></tr></thead><tbody id="userTable"></tbody></table></div></section><section class="panel adminTabPanel" data-panel="overview" id="enquiriesPanel"><div class="panelHead"><h2>Investment Enquiries</h2></div><div id="adminEnquiries"></div></section></div><section class="panel adminTabPanel" data-panel="customers" id="customerDetailsPanel"><div class="panelHead"><h2>Customer Details & Transactions</h2><span class="muted">Registered customers • complete transaction history</span></div><div class="customerDetailToolbar"><label style="min-width:280px">Customer<select id="customerDetailSelect"><option value="">Select customer</option></select></label><label style="min-width:280px">Find by Email / Phone<input id="customerContactLookup" type="text" inputmode="email" autocomplete="off" placeholder="Enter email or phone"></label><button type="button" class="smallBtn" id="findCustomerByContact">Find Customer</button><span id="customerLookupMsg" class="muted"></span></div><div id="customerDetailBox"><p class="muted">Select a customer to view complete details and transaction history.</p></div></section><section class="panel adminTabPanel" data-panel="plans" id="plansPanel"><div class="panelHead"><h2>Plan Management</h2><button class="smallBtn" id="addPlan">+ Add plan</button></div>
+<div class="addPlanForm" style="margin-bottom:18px"><h3>Investment Table Headers</h3><p class="muted">Rename the public investment table columns. Changes appear on the Home page after saving.</p><div class="planEditFields"><label>Plan Header<input id="headPlan" value="PLAN"></label><label>Investment Header<input id="headInvestment" value="INVESTMENT"></label><label>Monthly Payout Header<input id="headPayout" value="MONTHLY PAYOUT"></label><label>12 Month Total Header<input id="headTotal" value="12 MONTH TOTAL*"></label><label>Action Header<input id="headAction" value="ACTION"></label></div><button class="smallBtn" id="savePlanHeaders">Save Table Headers</button><p id="planHeadersMsg" class="muted"></p></div><div id="addPlanForm" class="addPlanForm" hidden><label>Plan Name<input id="newPlanName" type="text" placeholder="e.g. Starter Plan"></label><label>Minimum Amount<input id="newPlanAmount" type="number" min="1" step="1" placeholder="1000"></label><label>Monthly Payout %<input id="newPlanPayout" type="number" min="0" step="0.01" placeholder="5"></label><label class="checkboxLabel"><input id="newPlanActive" type="checkbox" checked> Active</label><div><button class="smallBtn" id="saveNewPlan">Create Plan</button><button class="smallBtn" id="cancelNewPlan" type="button">Cancel</button></div></div><div id="planList"></div></section><section class="panel adminTabPanel" data-panel="settings" id="settingsPanel"><div class="panelHead"><h2>Website Settings</h2></div><div class="addPlanForm siteSettingsForm"><label>WhatsApp Number<input id="siteWhatsapp" type="tel" inputmode="numeric" placeholder="7739325562"></label><label>Instagram URL<input id="siteInstagram" type="url" placeholder="https://instagram.com/youraccount"></label><label>Business UPI ID<input id="siteUpi" type="text" placeholder="yourupi@bank"></label><label>Payment Display Name<input id="sitePaymentName" type="text" placeholder="Chipset"></label><label>Investment Withdrawal Waiting Period (days)<input id="withdrawWaitDays" type="number" min="0" step="1" placeholder="30"></label><p class="muted">Invested principal becomes withdrawable after this many days from the approved deposit date. Earned wallet credits remain immediately withdrawable.</p><div><button class="smallBtn" id="saveSiteSettings">Save Website Settings</button></div><p id="siteSettingsMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="settings" id="navigationEditorPanel"><div class="panelHead"><h2>Header Menu Management</h2><button class="smallBtn" id="addMenuItem">+ Add Menu Item</button></div><p class="muted">Home page header menu ko yahin se add, delete, rename aur link change kar sakte ho. Order bhi change ho jayega.</p><div id="menuEditor"></div><div class="menuEditorActions"><button class="smallBtn" id="saveMenuItems">Save Header Menu</button><p id="menuSettingsMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="settings" id="aboutEditorPanel"><div class="panelHead"><h2>About Us Content</h2></div><div class="addPlanForm siteSettingsForm"><label>About Eyebrow<input id="aboutEyebrowInput" placeholder="ABOUT CHIPSET"></label><label>About Heading<input id="aboutTitleInput" placeholder="Infrastructure for India's next digital chapter."></label><label>About Paragraph 1<textarea id="aboutText1Input" rows="4"></textarea></label><label>About Paragraph 2<textarea id="aboutText2Input" rows="4"></textarea></label><button class="smallBtn" id="saveAboutSettings">Save About Us</button><p id="aboutSettingsMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="settings" id="earnCardEditorPanel"><div class="panelHead"><h2>Monthly Payout Card Text</h2></div><div class="addPlanForm siteSettingsForm"><p class="muted">Screenshot wale right-side payout card ka text yahan se editable hai.</p><label>Card Small Title<input id="earnCardTitleInput" placeholder="MONTHLY PAYOUT*"></label><label>Large Payout Text<input id="earnCardPayoutInput" placeholder="10%"></label><label>Description<textarea id="earnCardTextInput" rows="3" placeholder="Illustrative monthly payout on active plans. Starting from ₹10,000."></textarea></label><label>Button Text<input id="earnCardButtonInput" placeholder="START NOW →"></label><label>Button Link<input id="earnCardButtonLinkInput" placeholder="register.html"></label><button class="smallBtn" id="saveEarnCardSettings">Save Payout Card</button><p id="earnCardSettingsMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="referrals" id="referralsPanel"><div class="panelHead"><h2>Referral & Bonus Settings</h2></div><div class="addPlanForm siteSettingsForm"><p class="muted">Yahin se referral ka <b>bonus percentage</b>, referred customer ka <b>minimum deposit</b> aur WhatsApp par bheja jane wala <b>message</b> edit karo. Bonus tabhi credit hoga jab qualifying payment admin approve kare.</p><label>Referral Bonus (%)<input id="refBonus" type="number" min="0" max="100" step="0.01"></label><label>Minimum Deposit (₹)<input id="refMinDeposit" type="number" min="0" step="1"></label><label>WhatsApp Referral Message<textarea id="refMessage" rows="3" placeholder="Join using my referral link..."></textarea></label><p id="referralLivePreview" class="muted"></p><button class="smallBtn" id="saveReferralSettings">Save Referral Settings</button><p id="referralSettingsMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="offers" id="offersPanel"><div class="panelHead"><h2>Festival / Offer Banner</h2></div><div class="addPlanForm siteSettingsForm"><p class="muted">Manually change this anytime for offers such as 26 January, 15 August, Diwali, etc. Upload a new image and update the title/date.</p><label>Offer Title<input id="offerTitleInput" placeholder="26 January Special Offer"></label><label>Offer Text<input id="offerTextInput" placeholder="Celebrate with our special offer"></label><label>Offer Date / Label<input id="offerDateInput" placeholder="26 January 2027"></label><label>Offer Image<input id="offerImageInput" type="file" accept="image/*"></label><label class="checkboxLabel"><input id="offerEnabled" type="checkbox"> Show Offer on Website</label><button class="smallBtn" id="saveOfferSettings">Save Offer</button><p id="offerSettingsMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="payments" id="paymentsPanel"><div class="panelHead"><h2>Transactions & Payment Verification</h2></div><div id="adminTransactions"><p class="muted">Loading transactions…</p></div><div class="panel" style="margin-top:18px;padding:16px"><div class="panelHead"><h3>Investment Eligibility / Principal Transaction History</h3><span class="muted">Who made an amount eligible, when, why, and principal withdrawals</span></div><div id="adminInvestmentAudit"><p class="muted">Loading eligibility history…</p></div></div><div class="addPlanForm" style="margin-top:18px"><h3>Wallet Debit</h3><p class="muted">Admin can debit a customer's wallet. A reason is mandatory and the debit is recorded in transaction history.</p><div class="planEditFields"><label>Customer User ID<input id="debitUserId" placeholder="Customer UUID"></label><label>Amount<input id="debitAmount" type="number" min="0.01" step="0.01"></label><label>Reason<input id="debitReason" placeholder="Reason for debit" required></label></div><button class="smallBtn danger" id="debitWallet">Debit Wallet</button><p id="debitMsg" class="muted"></p></div><div class="addPlanForm" style="margin-top:18px"><h3>Add Credit / Payout</h3><div class="planEditFields"><label>Customer User ID<input id="creditUserId" placeholder="Customer UUID"></label><label>Customer Name<input id="creditCustomerName" placeholder="Customer name"></label><label>Phone<input id="creditPhone" placeholder="10 digit phone"></label><label>Email<input id="creditEmail" type="email"></label><label>Amount<input id="creditAmount" type="number" min="1" step="0.01"></label><label>Note<input id="creditNote" placeholder="Payout / credit note"></label></div><button class="smallBtn" id="addCredit">Add Credit</button><p id="creditMsg" class="muted"></p></div></section><section class="panel adminTabPanel" data-panel="withdrawals" id="withdrawalsPanel"><div class="panelHead"><div><h2>Withdrawal Requests</h2><span class="muted">Review customer withdrawals, bank details and approval status</span></div><div class="withdrawAdminToolbar"><span id="withdrawalSummary"></span><select id="withdrawStatusFilter" aria-label="Filter withdrawals"><option value="all">All</option><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select><button type="button" class="smallBtn" id="refreshWithdrawals">Refresh</button></div></div><div id="adminWithdrawals"><p class="muted">Loading withdrawal requests…</p></div></section><section class="panel adminTabPanel" data-panel="withdrawals" id="bankAccountsPanel">
+<div class="panelHead"><h2>Customer Bank Accounts</h2><span class="muted">Saved bank details submitted by customers</span></div>
+<div id="adminBankAccounts"><p class="muted">Loading bank accounts…</p></div>
+</section></main><div id="adminNotificationPanel" class="adminNotificationPanel" hidden>
+  <div class="adminNotificationHead"><b>Admin Alerts</b><button type="button" id="adminMarkAllRead" class="smallBtn">Mark all read</button></div>
+  <div id="adminNotificationList"><p class="muted">Loading notifications…</p></div>
+</div>
+<div id="adminNotificationToast" class="adminNotificationToast" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="protected-page-security.js?v=v21-layout"></script>
+<script src="admin.js?v=v24-notification-click-hard-fix"></script><script src="admin-visitors.js?v=v28"></script>
+<script>
+/* V24 — HARD notification click fix
+   This handler is intentionally isolated from admin.js and uses capture-phase
+   event delegation so a runtime error or another click handler cannot make
+   notification rows appear unclickable.
+*/
+(function(){
+  const getTabName = t => ({
+    signup:'customers',
+    payment:'payments',
+    withdrawal:'withdrawals',
+    enquiry:'overview'
+  })[String(t||'').toLowerCase()] || 'overview';
+
+  function activate(tabName){
+    const tab=[...document.querySelectorAll('.adminTab')]
+      .find(x=>x.dataset.tab===tabName);
+    if(tab){
+      tab.click();
+      return true;
+    }
+    return false;
+  }
+
+  function selectCustomer(id){
+    if(!id)return;
+    const pick=()=>{
+      const s=document.getElementById('customerDetailSelect');
+      if(!s)return;
+      const opt=[...s.options].find(o=>String(o.value)===String(id));
+      if(opt){
+        s.value=String(id);
+        s.dispatchEvent(new Event('change',{bubbles:true}));
+        return true;
+      }
+      return false;
+    };
+    if(pick())return;
+    setTimeout(pick,300);
+    setTimeout(pick,800);
+    setTimeout(pick,1500);
+    setTimeout(pick,2500);
+  }
+
+  async function markRead(id){
+    try{
+      if(window.sb && id){
+        await sb.from('admin_notifications')
+          .update({read_at:new Date().toISOString()})
+          .eq('id',id);
+      }
+    }catch(e){}
+  }
+
+  document.addEventListener('click',function(e){
+    const item=e.target.closest && e.target.closest('.adminNotificationItem');
+    if(!item)return;
+
+    /* Take control before any older notification handler can interfere. */
+    e.preventDefault();
+    e.stopPropagation();
+    if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+
+    const id=item.getAttribute('data-notification-id')||'';
+    const list=document.getElementById('adminNotificationList');
+    const title=item.querySelector('b')?.textContent||'';
+    const panel=document.getElementById('adminNotificationPanel');
+    if(panel)panel.hidden=true;
+
+    let type='overview';
+    if(/signup|customer registered/i.test(title))type='customers';
+    else if(/payment/i.test(title))type='payments';
+    else if(/withdrawal/i.test(title))type='withdrawals';
+    else if(/enquiry|query/i.test(title))type='overview';
+
+    /* Prefer the original notification object when available. */
+    try{
+      const source=window.__chipsetAdminNotifications||[];
+      const n=source.find(x=>String(x.id)===String(id));
+      if(n){
+        type=getTabName(n.event_type);
+        if(String(n.event_type).toLowerCase()==='signup'){
+          selectCustomer(n.source_id);
+        }
+      }
+    }catch(err){}
+
+    markRead(id);
+
+    if(!activate(type)){
+      /* Last-resort navigation if the tab DOM is not ready. */
+      try{ location.href='admin.html?tab='+encodeURIComponent(type); }catch(err){}
+    }else{
+      const dest =
+        type==='customers' ? document.getElementById('customerDetailsPanel') :
+        type==='payments' ? document.getElementById('paymentsPanel') :
+        type==='withdrawals' ? document.getElementById('withdrawalsPanel') :
+        document.getElementById('enquiriesPanel');
+      if(dest)setTimeout(()=>dest.scrollIntoView({behavior:'smooth',block:'start'}),50);
+    }
+  },true);
+
+  /* Expose the loaded list from the V23 code without changing its UI logic. */
+  const hook=()=>{
+    if(window.__chipsetAdminNotifications)return;
+    const panel=document.getElementById('adminNotificationPanel');
+    if(!panel)return;
+    const list=document.getElementById('adminNotificationList');
+    if(!list)return;
+    /* V24 can also read event_type from a row by asking the Supabase table. */
+    window.__chipsetAdminNotifications=[];
+  };
+  hook();
+})();
+</script></body></html>

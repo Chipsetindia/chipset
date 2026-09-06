@@ -1,0 +1,8 @@
+V17 WALLET + SOA
+
+1. Run supabase/V17-WALLET-REFERRAL-SOA.sql once in Supabase SQL Editor.
+2. Replace the chip folder with this V17 build.
+3. Hard refresh with Ctrl+Shift+R.
+
+Customer dashboard now shows wallet balance, interest earned, referral bonus, wallet tabs, detailed SOA and Download SOA.
+No daily-earning SQL should be rerun.

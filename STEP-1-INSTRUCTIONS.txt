@@ -1,0 +1,14 @@
+CHIPSET STEP 1 — CUSTOMER WITHDRAWAL ELIGIBILITY + REFERRAL
+
+1) Deploy this ZIP.
+2) In Supabase SQL Editor, run ONLY:
+   supabase-withdrawal-eligibility.sql
+
+This migration adds:
+- Admin-controlled investment withdrawal waiting days (default 30).
+- Earned wallet credits are immediately withdrawable.
+- Approved investment principal becomes withdrawable after the waiting period.
+- Admin emergency/medical early-eligibility override per customer.
+- Reliable referral-code generation for new customers.
+
+Do NOT rerun the older SQL files for this step.

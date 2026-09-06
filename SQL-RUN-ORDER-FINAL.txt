@@ -1,0 +1,213 @@
+CHIPSET FINAL PRODUCTION V34 — SQL RUN ORDER & DEPLOYMENT GUIDE
+===========================================================
+
+IMPORTANT
+---------
+This guide is for the ZIP: CHIPSET_FINAL_PRODUCTION.zip
+
+The current production database has already been tested for:
+- Separate earning for multiple investments
+- Daily wallet credit
+- Duplicate-period protection
+- Automatic pg_cron runner every 5 minutes
+
+If you are using the SAME Supabase database that was tested during this build,
+DO NOT run the migration files again just because they are present in the ZIP.
+Use the SQL below only when setting up a fresh database or when a migration is
+actually missing.
+
+===========================================================
+1. SQL FILES — RUN ORDER FOR A FRESH/NEW DATABASE
+===========================================================
+
+Run the following in Supabase SQL Editor, ONE FILE AT A TIME, in this order:
+
+01  supabase/supabase-transactions.sql
+    Base investment_transactions table/policies.
+
+02  supabase-referrals-offers.sql
+    Referral code/reward tables and offer/banner settings.
+
+03  supabase/REFERRAL-FIRST-TRANSACTION-PERCENT-FIX.sql
+    Final referral attribution + first approved transaction percentage reward.
+
+04  supabase/MULTIPLE-BANK-ACCOUNTS.sql
+    Enables multiple bank accounts per customer.
+
+05  supabase/admin-customer-security.sql
+    Customer phone uniqueness/security and admin lookup.
+
+06  supabase/admin-customer-directory.sql
+    Admin-only customer directory/email lookup.
+
+07  supabase/supabase-site-settings.sql
+    Public site/payment/contact settings.
+
+08  supabase/CHIPSET-INVESTMENT-FINAL-MIGRATION.sql
+    FINAL COMBINED investment/withdrawal migration.
+    This already contains the return/maturity, withdrawal override,
+    principal remaining, eligibility and principal-withdrawal logic.
+
+09  supabase/CLEAR-INVESTMENT-ELIGIBILITY-AFTER-WITHDRAWAL-REQUEST.sql
+    Clears investment withdrawal eligibility after a full principal
+    withdrawal request; partial requests keep the remaining eligibility.
+
+10  supabase/DAILY-EARNING-WITHDRAWAL-FINAL.sql   <<< RUN LAST
+11  supabase/V32-INVESTMENT-AGREEMENTS.sql
+12  supabase/V34-FINAL-AGREEMENT-HARDENING.sql
+    FINAL daily earning processor + daily schedule + withdrawal schedule.
+
+===========================================================
+2. DO NOT RUN THESE AFTER THE FINAL DAILY PATCH
+===========================================================
+
+DO NOT run these as additional/late migrations:
+
+- supabase/FIX-V8-PRINCIPAL-WITHDRAWAL.sql
+- supabase/FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql
+- supabase/admin-investment-return-maturity.sql
+- supabase/admin-investment-withdrawal-override.sql
+- supabase/admin-investment-eligibility-v2.sql
+- supabase/ZZ-FINAL-DAILY-EARNING-RUN-LAST.sql
+
+Reason:
+The combined investment migration already contains the required investment,
+withdrawal and principal logic. FIX-V9 and older earning patches can replace
+process_due_plan_earnings() with an older version and must NOT be run after the
+final daily earning patch.
+
+ZZ-FINAL-DAILY-EARNING-RUN-LAST.sql is an instruction/helper file only; it is
+NOT the actual daily earning implementation. The actual implementation is:
+DAILY-EARNING-WITHDRAWAL-FINAL.sql
+
+===========================================================
+3. VERY IMPORTANT — EXISTING TESTED DATABASE
+===========================================================
+
+If this is the Supabase project already used for the CHIPSET tests in this
+build, NO NEW SQL IS REQUIRED.
+
+Verified behavior:
+- ₹2,000 at 10% weekly = ₹28.57/day
+- ₹3,000 at 10% weekly = ₹42.86/day
+- Each investment creates its own plan_earning record.
+- Each earning creates its own wallet credit.
+- Duplicate periods are protected.
+- pg_cron job: chipset-daily-earnings
+- Schedule: */5 * * * *
+- Active: true
+- Command: select public.process_due_plan_earnings();
+
+===========================================================
+4. HOW DAILY EARNING WORKS
+===========================================================
+
+Each approved investment is processed independently.
+
+Daily return period:
+    principal × return_percent / 100
+
+Weekly return period:
+    principal × return_percent / 100 / 7
+
+Monthly return period:
+    principal × return_percent / 100 / 30
+
+Example:
+    ₹2,000 × 10% ÷ 7 = ₹28.57/day
+    ₹3,000 × 10% ÷ 7 = ₹42.86/day
+
+The word weekly/monthly describes the RETURN RATE PERIOD.
+Wallet credit itself is DAILY.
+
+===========================================================
+5. MULTIPLE PLANS
+===========================================================
+
+Every investment_transaction has its own:
+- principal
+- return_percent
+- earning_rate_period
+- earning_next_at
+- earning periods
+
+Therefore two investments of the same customer do NOT get merged.
+
+Example:
+    Investment A: ₹2,000 @ 10% weekly = ₹28.57/day
+    Investment B: ₹3,000 @ 10% weekly = ₹42.86/day
+    Total = ₹71.43/day
+
+===========================================================
+6. PRINCIPAL WITHDRAWAL
+===========================================================
+
+An approved principal withdrawal reduces principal_remaining for THAT
+investment only.
+
+Future earnings are calculated using the remaining principal for that
+investment. Other investments of the same customer remain independent.
+
+Do not manually edit principal_remaining in production. Use the application's
+principal withdrawal request/approval flow.
+
+===========================================================
+7. AUTOMATIC RUNNER
+===========================================================
+
+pg_cron runs the processor every 5 minutes.
+
+It does NOT mean money is credited every 5 minutes.
+The processor only creates an earning when an investment's earning_next_at
+is due.
+
+Duplicate protection prevents the same investment/period from being credited
+twice.
+
+===========================================================
+8. FIRST ADMIN
+===========================================================
+
+After registering the admin account, set its role in Supabase SQL Editor:
+
+UPDATE public.profiles
+SET role = 'admin'
+WHERE id = (
+  SELECT id FROM auth.users
+  WHERE email = 'YOUR_ADMIN_EMAIL'
+);
+
+Never put a Supabase service_role/secret key in browser JavaScript.
+
+===========================================================
+9. AFTER SQL DEPLOYMENT
+===========================================================
+
+1. Hard refresh the website: Ctrl + Shift + R
+2. Log in as admin.
+3. Check Plan Management and investment return settings.
+4. Check Withdrawals.
+5. Test one customer investment.
+6. Confirm wallet earning appears once per due day.
+7. Confirm multiple investments remain separate.
+
+===========================================================
+10. FINAL RULE
+===========================================================
+
+For the already-tested production Supabase project:
+
+    Run V32-INVESTMENT-AGREEMENTS.sql if agreements are not yet installed.
+    Then run V34-FINAL-AGREEMENT-HARDENING.sql.
+    Do NOT rerun unrelated old earning patches.
+
+For a fresh database:
+
+    Follow steps 01 → 10 above.
+    DAILY-EARNING-WITHDRAWAL-FINAL.sql MUST be the LAST earning patch.
+Agreement SQL runs AFTER the daily earning patch; V32 first, then V34 hardening.
+
+END OF GUIDE
+
+
+V16 CUSTOMER ELIGIBILITY FIX: run supabase/ADMIN-PRINCIPAL-NONELIGIBLE-SUMMARY-FIX.sql once after ADMIN-PRINCIPAL-NONELIGIBLE.sql.

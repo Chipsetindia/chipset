@@ -1,0 +1,9 @@
+V21 layout + referral settings consistency
+
+- Responsive phone/tablet layout for customer and admin dashboards.
+- Public plan cards/actions no longer drift on mobile.
+- Admin tabs/cards/controls use consistent responsive sizing.
+- Referral UI now reads referral_bonus_percent (not legacy referral_bonus_amount).
+- Admin-set minimum deposit and percentage are reflected in the customer referral message.
+- Actual bonus amount is calculated at approval as qualifying transaction amount * configured percentage / 100.
+- Existing SQL/earning logic unchanged; no new SQL required for V21.

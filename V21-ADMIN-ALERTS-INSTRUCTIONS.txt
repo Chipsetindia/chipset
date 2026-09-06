@@ -1,0 +1,9 @@
+CHIPSET V21/V22 — ADMIN ALERTS
+
+This build preserves the V21 mobile/tablet layout files and adds the admin realtime notification UI.
+
+Supabase: run ONLY chip/supabase/V21-ADMIN-REALTIME-NOTIFICATIONS.sql once on the existing production database.
+
+Alerts: new customer signup, pending payment/investment request, withdrawal request, and customer/investment enquiry.
+
+Browser notifications: open Admin, click the bell, and allow browser notifications if prompted.

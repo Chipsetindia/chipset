@@ -1,0 +1,23 @@
+CHIPSET V34 — INVESTMENT AGREEMENT FINAL HARDENING
+
+WHAT THIS VERSION ADDS
+1. A customer must acknowledge plan details + risk disclosure before submitting payment proof.
+2. After an investment payment is approved by an admin, Supabase automatically creates an immutable agreement snapshot.
+3. Agreement snapshot contains customer details, plan, investment amount, return/earning terms, earning periods, maturity, payment ID, UTR, approval time, disclaimer, disclosure and risk notice.
+4. Customer dashboard shows Investment Agreements only after approval.
+5. Customer can open the agreement and use PRINT / SAVE AS PDF.
+6. Customer RLS allows a customer to read only their own agreements. No client insert/update/delete policy is provided.
+7. Customer acknowledgement timestamp + terms version are recorded for new payments.
+7. Existing approved investments are backfilled when the V32 SQL is run.
+
+SUPABASE STEP
+Run these files once in Supabase SQL Editor:
+  supabase/V32-INVESTMENT-AGREEMENTS.sql
+  supabase/V34-FINAL-AGREEMENT-HARDENING.sql
+
+RUN IT AFTER THE EXISTING FINAL INVESTMENT / DAILY-EARNING / REFERRAL MIGRATIONS.
+
+IMPORTANT
+- The agreement is a terms snapshot; later catalogue edits do not rewrite an already-approved agreement.
+- Current delivery is secure dashboard access + print/save-to-PDF. Automatic email delivery is NOT enabled by this version because that requires a server-side email provider/Edge Function.
+- Have the final agreement wording reviewed by qualified Indian legal/compliance counsel before using it as a legally binding investment contract.

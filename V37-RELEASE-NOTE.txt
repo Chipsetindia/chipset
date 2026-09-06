@@ -1,0 +1,11 @@
+CHIPSET V37 — Principal Lock vs Investment Term
+
+Business rule:
+- Principal lock = first 30 days only.
+- Investment/earning term remains the approved plan term (weekly 52 periods = up to 364 days).
+- Daily interest is credited independently throughout the active investment term.
+- Auto-reinvestment occurs at the end of the full investment term, not at day 30.
+- Principal withdrawal is eligible after the 30-day lock subject to applicable withdrawal controls/process.
+
+Supabase migration: v37_principal_lock_30_days_term_364_days has already been applied to the live CHIPSET project.
+Do not rerun legacy earning migrations over this version.

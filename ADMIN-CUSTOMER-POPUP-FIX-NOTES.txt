@@ -1,0 +1,10 @@
+Admin customer popup improvements:
+- BUY/investment transactions are shown as positive amounts and labeled BUY.
+- CREDIT transactions are shown as positive amounts and labeled CREDIT.
+- Withdrawal requests remain separate.
+- Customer investment plans now show configured earning mode/value/frequency and earned amount when available.
+- Referral code displays the customer's actual profiles.referral_code; if none exists, it explicitly shows "Not generated" instead of a blank/dash.
+- No SQL migration is required for these UI/display changes.
+
+
+SECURITY SQL CORRECTION: profiles has no email column. Email lookup uses auth.users.email; phone uniqueness is enforced on profiles.phone. Do not use profiles.email.

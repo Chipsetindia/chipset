@@ -1,0 +1,16 @@
+CHIPSET DAILY EARNING + WITHDRAWAL TEST
+
+1. Keep the database backup you already created before changing anything.
+2. In Supabase SQL Editor, run: supabase/DAILY-EARNING-WITHDRAWAL-FINAL.sql
+3. Refresh the customer dashboard and Admin page with Ctrl+F5.
+4. For an existing approved investment, Admin > Customers > select customer > Investment Plans.
+5. Set Interest/Return and Rate Period (e.g. 10 + Weekly), choose Next Credit Date/time, and Save Terms.
+6. Daily credit means a 10% weekly rate is divided by 7 for each daily wallet credit. Monthly is divided by 30. Daily rate period is not divided.
+7. Customer dashboard shows a live countdown to the next daily credit and the expected daily credit amount.
+8. Principal withdrawal approval reduces principal_remaining. Future daily earnings use the remaining principal; already credited earnings stay unchanged.
+9. Admin customer details include Wallet Withdrawal Eligibility: Daily / Weekly / Monthly / Immediate. Default is Weekly.
+10. Normal wallet withdrawals are blocked until the customer's schedule is eligible. Principal-withdrawal requests are not blocked by the wallet schedule.
+11. Admin wallet Credit/Debit controls remain available; debit reason is mandatory.
+12. Test in local first. Do not deploy to GitHub until the tests pass.
+
+NOTE: The SQL tries to register a pg_cron job every 5 minutes. If pg_cron is unavailable on the project, the dashboard/admin still invoke the earning processor when opened; enable pg_cron in Supabase if you need server-side automatic processing while nobody is logged in.

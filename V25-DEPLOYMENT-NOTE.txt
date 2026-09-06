@@ -1,0 +1,15 @@
+CHIPSET V25 EARNING FIX
+
+1. Replace website files with this V25 build.
+2. In Supabase SQL Editor, run:
+   supabase/DAILY-EARNING-WITHDRAWAL-FINAL.sql
+   then
+   supabase/V25-INDIVIDUAL-EARNING-SCHEDULE-FIX.sql
+3. Do NOT run older earning processors afterward, especially FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql.
+
+V25 behavior:
+- Each approved investment gets an independent schedule based on approval time (verified_at), falling back to created_at.
+- One investment can receive at most one daily interest credit per processor execution.
+- Dashboard Earning = credited Interest + credited Referral Bonus.
+- SOA/history keeps Interest and Referral Bonus as separate categories.
+- Mobile/tablet UI files are preserved; this patch does not replace responsive layout rules.

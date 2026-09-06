@@ -1,0 +1,47 @@
+CHIPSET FINAL PRODUCTION BUILD
+
+SQL DEPLOYMENT RULE
+===================
+For the already-tested Supabase project: NO NEW SQL IS NEEDED.
+The daily earning processor and pg_cron are already installed and verified.
+
+For a fresh/new Supabase database, read:
+SQL-RUN-ORDER-FINAL.txt
+and run the SQL files in its exact numbered order.
+
+FINAL DAILY PATCH
+=================
+The final earning implementation is:
+supabase/DAILY-EARNING-WITHDRAWAL-FINAL.sql
+
+It must be the LAST earning patch.
+
+DO NOT run these after it:
+- FIX-V8-PRINCIPAL-WITHDRAWAL.sql
+- FIX-V9-INVESTED-COUNTDOWN-CUMULATIVE.sql
+- old admin investment migration files
+- ZZ-FINAL-DAILY-EARNING-RUN-LAST.sql
+
+VERIFIED CURRENT DATABASE
+=========================
+- ₹2,000 at 10% weekly = ₹28.57/day
+- ₹3,000 at 10% weekly = ₹42.86/day
+- Separate plan_earning wallet credits
+- Duplicate-period protection
+- pg_cron: chipset-daily-earnings
+- Schedule: */5 * * * *
+- Active: true
+- Command: select public.process_due_plan_earnings();
+
+IMPORTANT
+=========
+Weekly/monthly is the return-rate period, not the wallet credit frequency.
+Each approved investment is processed independently.
+Principal withdrawal affects only that investment's future earnings.
+
+
+NEW ADMIN PRINCIPAL ELIGIBILITY CONTROL:
+Run supabase/ADMIN-PRINCIPAL-NONELIGIBLE.sql once in the existing tested Supabase project. This adds the Admin Customers > Principal Eligibility Control, allowing the admin to mark part of invested principal as non-eligible for principal withdrawal without changing the investment amount or daily earnings.
+
+
+V16 CUSTOMER ELIGIBILITY FIX: run supabase/ADMIN-PRINCIPAL-NONELIGIBLE-SUMMARY-FIX.sql once after ADMIN-PRINCIPAL-NONELIGIBLE.sql.

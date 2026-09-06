@@ -1,0 +1,11 @@
+CHIPSET V28 VISITOR TAB
+
+This is a UI/admin organization update based on V27 visitor analytics.
+No new Supabase SQL is required if V27-VISITOR-ANALYTICS.sql has already been run.
+
+Changes:
+- Website Visitors moved from Overview into a separate Visitors admin tab.
+- Compact visitor dropdown, sorted by latest activity.
+- Selecting a visitor shows first/last seen, device, source, last page and page history.
+- Page history is shown in a scrollable table instead of a long Overview list.
+- Mobile/tablet responsive layout preserved and visitor controls are responsive.

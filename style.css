@@ -1,0 +1,583 @@
+:root{--navy:#03101f;--navy2:#071b30;--blue:#0799ed;--blue2:#075dcc;--cyan:#25baff;--gold:#f4b51b;--text:#091a2d;--muted:#68798d;--line:#dbe4ec;--light:#f5f8fb;--green:#1c9b61}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:white}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.container{width:min(1180px,calc(100% - 48px));margin:auto}.siteHeader,.dashHeader{height:76px;background:#03101ff2;color:white;border-bottom:1px solid #17324b;position:sticky;top:0;z-index:30;backdrop-filter:blur(14px)}.nav{height:100%;display:flex;align-items:center;gap:30px}.brand{display:flex;align-items:center;gap:9px;color:#fff;font-size:23px;font-weight:900;letter-spacing:-1.2px;line-height:.9;white-space:nowrap}.chipIcon{color:#0aa9ff;font-size:34px}.brand small{display:block;font-size:7px;letter-spacing:.8px;margin-top:5px;color:#d5e1eb}.siteHeader nav{display:flex;justify-content:center;gap:25px;flex:1}.siteHeader nav a{font-size:10px;font-weight:800;letter-spacing:.3px;padding:29px 0;position:relative}.siteHeader nav a.active,.siteHeader nav a:hover{color:#21adff}.btn{display:inline-block;border:0;background:linear-gradient(135deg,#16aaff,#0872e2);color:white;padding:13px 20px;border-radius:7px;font-size:11px;font-weight:900;letter-spacing:.3px;cursor:pointer;box-shadow:0 8px 25px #078cf52b}.btn b{margin-left:13px;font-size:15px}.hamb{display:none;background:none;border:0;color:#fff;font-size:25px;margin-left:auto}.hero{height:570px;background:#020d1b;color:#fff;position:relative;overflow:hidden;isolation:isolate;z-index:1}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 50%,#087dc62b,transparent 35%);pointer-events:none;z-index:-1}.heroGrid{height:100%;display:grid;position:relative;z-index:2;grid-template-columns:1fr 1fr;align-items:center;gap:40px;position:relative;z-index:1}.eyebrow{font-size:10px;letter-spacing:2px;color:#0a9eef;font-weight:900}.hero h1{font-size:51px;line-height:1.02;letter-spacing:-2.5px;margin:14px 0}.hero h1 span,.sectionHead h2 span,.growth h2 span{color:#079ef1}.hero h2{font-size:18px;margin:0 0 13px}.hero p{max-width:570px;color:#bdcbd7;font-size:14px;line-height:1.8}.actions{display:flex;gap:12px;margin:25px 0}.outline{border:1px solid #587086;border-radius:7px;padding:12px 18px;font-size:11px;font-weight:900}.trust{display:flex;gap:18px;margin-top:27px}.trust span{display:grid;grid-template-columns:30px 1fr;column-gap:8px;border-right:1px solid #3a5369;padding-right:18px;font-size:19px;color:#29b8ff}.trust span:last-child{border:0}.trust b{font-size:9px;color:#fff;line-height:1.3}.trust small{grid-column:2;font-size:8px;color:#b7c7d4}.serverArt{height:390px;border:1px solid #164568;border-radius:18px;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a2137,#020c18 60%);box-shadow:0 35px 80px #0007}.serverArt:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,transparent 45%,#0a96ee18 46%,transparent 60%)}.building{position:absolute;inset:45px 40px 35px;transform:perspective(500px) rotateY(-8deg);background:linear-gradient(105deg,#0a1b2c,#12334c);border:1px solid #2b5b78;box-shadow:inset 0 0 70px #008de72b}.tower{position:absolute;right:15px;top:20px;color:#eaf7ff;font-size:20px;font-weight:900;letter-spacing:2px}.lights{position:absolute;inset:65px 25px 70px;background:repeating-linear-gradient(90deg,transparent 0 24px,#079ff155 25px 28px,transparent 29px 52px),repeating-linear-gradient(0deg,transparent 0 27px,#0a9df14d 28px 31px,transparent 32px 58px);box-shadow:0 0 50px #009fff22}.floor{position:absolute;bottom:20px;left:0;right:0;height:12px;background:#07101a;border-top:2px solid #12aaff;box-shadow:0 0 30px #079ff1}.metrics{background:#031b36;color:#fff}.metricGrid{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 0}.metricGrid>div{text-align:center;border-right:1px solid #29445e}.metricGrid>div:last-child{border:0}.metricGrid strong{display:block;color:#fff;font-size:21px}.metricGrid small{font-size:10px;color:#c0ced9}.section{padding:75px 0}.light{background:#f7f9fb}.sectionHead{text-align:center;max-width:760px;margin:0 auto 38px}.sectionHead h2{font-size:31px;margin:10px 0}.sectionHead p{color:var(--muted);font-size:13px;line-height:1.7}.planGrid{display:grid;grid-template-columns:1fr 280px;gap:20px}.tableCard{background:#fff;border:1px solid #d5dfe8;border-radius:8px;overflow:hidden}.tableCard table{width:100%;border-collapse:collapse}.tableCard th{background:#1559bc;color:#fff;padding:14px;font-size:11px}.tableCard td{padding:16px 13px;text-align:center;border:1px solid #dce4eb;font-size:13px;font-weight:800}.earnCard{background:linear-gradient(180deg,#071a30,#020c19);border-radius:12px;color:#fff;text-align:center;padding:35px 22px;display:flex;flex-direction:column;justify-content:center}.earnCard span{font-size:11px;font-weight:800}.earnCard strong{font-size:78px;line-height:1;color:#079ff1;letter-spacing:-5px;margin:8px}.earnCard p{color:#c2ced9;font-size:11px;line-height:1.7}.gold{background:var(--gold);padding:13px;border-radius:6px;font-size:11px;font-weight:900;color:#111}.featureGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.featureGrid article{padding:22px 17px;border:1px solid #e2e8ee;border-radius:9px;box-shadow:0 7px 25px #091b2b08}.featureGrid i{font-style:normal;font-size:29px;color:#0754a4}.featureGrid h3{font-size:13px;line-height:1.35}.featureGrid p{font-size:10px;color:#637389;line-height:1.7}.growth{background:#031a32;color:white;padding:37px 0}.growthInner{display:flex;justify-content:space-between;align-items:center}.growth h2{font-size:23px;margin:8px 0}.growth p{color:#c5d3df;font-size:12px}.split{display:grid;grid-template-columns:1fr 1fr;gap:80px}.split h2,.contactGrid h2{font-size:38px;line-height:1.1;margin:10px 0}.split p,.contactGrid p{color:#64748a;font-size:13px;line-height:1.8}.narrow{max-width:850px}.narrow details{border-bottom:1px solid #d9e1e8;padding:19px 5px}.narrow summary{font-weight:800;font-size:13px;cursor:pointer}.narrow p{color:#68798c;font-size:12px;line-height:1.7}.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contactGrid form,.authCard form{display:grid;gap:13px}label{font-size:10px;color:#637389;font-weight:800;display:grid;gap:6px}input,textarea,select{border:1px solid #ccd7e1;border-radius:6px;padding:12px;background:#fff;outline:none;color:#10243a}textarea{min-height:105px;resize:vertical}output{font-size:12px;color:#0785cf;min-height:16px}footer{background:#020d1b;color:white}.footerGrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding:40px 0}.footerGrid b{font-size:11px}.footerGrid a:not(.brand){display:block;color:#afbecb;font-size:11px;margin:10px 0}.footBrand p{font-size:11px;color:#91a4b5}.copyright{text-align:center;border-top:1px solid #173049;padding:15px;color:#a9b7c4;font-size:9px}.authBody{min-height:100vh;background:linear-gradient(135deg,#02101e,#09243b);display:grid;place-items:center;padding:30px}.authShell{width:min(470px,100%);text-align:center}.darkBrand{justify-content:center;margin-bottom:24px}.authCard{background:#fff;border-radius:14px;padding:34px;text-align:left;box-shadow:0 30px 80px #0005}.authCard h1{font-size:28px;margin:8px 0}.authCard>p{font-size:12px;color:var(--muted);margin-bottom:24px}.full{width:100%}.authLinks{display:flex;justify-content:center;gap:6px;font-size:12px;margin-top:18px}.authLinks a{color:#078bd8;font-weight:800}.demoBox{margin-top:20px;background:#eef7fd;border:1px solid #cce9f8;padding:10px;border-radius:7px;font-size:10px;color:#486276} .authError{display:block!important;margin-top:12px;padding:14px 16px;border:2px solid #dc2626;background:#fff1f2;color:#b91c1c;border-radius:8px;font-size:15px!important;line-height:1.45;font-weight:900!important;min-height:0} .back{display:inline-block;color:#a9bfce;font-size:11px;margin-top:18px}.dashBody{background:#f4f7fa;min-height:100vh}.dashHeader{position:sticky}.dashRight{margin-left:auto;display:flex;gap:15px;align-items:center;font-size:11px}.logout{background:transparent;border:1px solid #41627a;color:#fff;padding:8px 13px;border-radius:6px;cursor:pointer}.adminBadge,.pill{font-size:9px;font-weight:900;background:#0b9ced;color:#fff;padding:6px 9px;border-radius:20px}.dashboard{padding:42px 0}.welcome{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.welcome h1{font-size:32px;margin:7px 0}.welcome p{font-size:12px;color:var(--muted)}.statGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.statGrid>div,.panel{background:#fff;border:1px solid #e0e7ed;border-radius:10px;padding:20px}.statGrid small{display:block;color:#7a8998;font-size:9px;font-weight:800}.statGrid strong{display:block;font-size:23px;margin-top:8px}.green{color:var(--green)}.dashGrid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:18px}.panel{margin-bottom:18px}.panelHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.panelHead h2{font-size:16px;margin:0}.panelHead a{font-size:10px;color:#078bd8;font-weight:800}.miniPlan{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e7edf2;padding:15px 0}.miniPlan div b,.miniPlan div span{display:block}.miniPlan div span{font-size:10px;color:#718195;margin-top:4px}.selectPlan,.smallBtn{border:1px solid #bfd2e0;background:#edf7fc;color:#087dbb;border-radius:5px;padding:7px 11px;font-size:10px;font-weight:800;cursor:pointer}.profile{display:flex;gap:12px;align-items:center}.avatar{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:#0a92dc;color:#fff;font-weight:900}.profile b,.profile span{display:block;font-size:12px}.profile span{font-size:10px;color:#718195;margin-top:3px}.panel hr{border:0;border-top:1px solid #e7edf2;margin:20px 0}.muted{color:#7a8998;font-size:11px;line-height:1.6}.enquiry{border-top:1px solid #e7edf2;padding:13px 0;display:flex;justify-content:space-between;font-size:11px}.enquiry small{color:#718195}.adminGrid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.tableScroll{overflow:auto}.adminTable{width:100%;border-collapse:collapse;font-size:10px}.adminTable th,.adminTable td{text-align:left;padding:11px;border-bottom:1px solid #e8edf1}.adminTable th{color:#718195;font-size:9px}.adminPlan{display:flex;justify-content:space-between;padding:13px 0;border-top:1px solid #e7edf2;font-size:11px}
+@media(max-width:900px){.siteHeader nav{display:none}.hamb{display:block}.heroGrid{grid-template-columns:1fr}.hero{height:auto;padding:75px 0}.serverArt{height:300px}.featureGrid{grid-template-columns:repeat(3,1fr)}.planGrid{grid-template-columns:1fr}.split,.contactGrid,.dashGrid,.adminGrid{grid-template-columns:1fr}.statGrid{grid-template-columns:1fr 1fr}.footerGrid{grid-template-columns:1fr 1fr}.trust{flex-wrap:wrap}}@media(max-width:600px){.container{width:calc(100% - 28px)}.hero h1{font-size:39px}.hero h2{font-size:15px}.metricGrid{grid-template-columns:1fr 1fr;gap:18px}.metricGrid>div{border:0}.featureGrid{grid-template-columns:1fr}.section{padding:55px 0}.growthInner,.welcome{align-items:flex-start;flex-direction:column;gap:20px}.statGrid{grid-template-columns:1fr 1fr}.footerGrid{grid-template-columns:1fr}.authCard{padding:25px}.tableCard{overflow:auto}.tableCard table{min-width:620px}.brand{font-size:19px}.chipIcon{font-size:28px}}
+
+.hero,.heroGrid,.serverArt{backface-visibility:hidden}.section{position:relative;z-index:2}.metrics{position:relative;z-index:3}.siteHeader{z-index:50}
+
+.adminEnquiry{align-items:center;gap:16px}.enquiryAction{display:flex;align-items:center;gap:8px;flex-shrink:0}.statusSelect{min-width:118px;padding:7px 9px;font-size:10px}.saveStatus{white-space:nowrap}.saveStatus:disabled{opacity:.65;cursor:wait}@media(max-width:760px){.adminEnquiry{align-items:flex-start;flex-direction:column}.enquiryAction{width:100%}.statusSelect{flex:1}}
+
+.enquiryMessage{margin-top:8px;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:8px;line-height:1.5;white-space:pre-wrap;word-break:break-word;font-size:13px}.enquiryMessage b{font-size:12px}
+
+.adminPlanManage{display:flex;flex-direction:column;gap:14px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.planEditFields{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.planEditFields label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.planEditFields input{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid #d8d8d8;border-radius:8px;background:#fff;font:inherit;text-transform:none;letter-spacing:normal}
+.planManageActions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.planState{font-size:11px;font-weight:800;padding:6px 10px;border-radius:999px}
+.planState.isActive{background:#e9f8ee;color:#16803a}.planState.isInactive{background:#f1f1f1;color:#777}
+@media(max-width:700px){.planEditFields{grid-template-columns:1fr}.planManageActions{align-items:flex-start;flex-direction:column}}
+
+/* Plan actions, social links and direct payment */
+.planActions{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}.payBtn{background:#f4b51b;color:#111;padding:8px 10px;border-radius:5px;font-size:9px;font-weight:900;white-space:nowrap}.miniSocial,.socialIcon{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-weight:900}.miniSocial{width:28px;height:28px;color:#fff;font-size:13px}.miniSocial.whatsapp{background:#20b96b}.miniSocial.instagram{background:#b33f96}.socialBar{display:flex;align-items:center;gap:10px;margin-top:20px;color:#aebdca;font-size:9px;font-weight:900;letter-spacing:1px}.socialIcon{width:34px;height:34px;color:#fff;font-size:17px}.socialIcon.whatsapp{background:#20b96b}.socialIcon.instagram{background:#b33f96}.paymentPage{padding:80px 0;min-height:calc(100vh - 76px);background:#f5f8fb}.paymentPage h1{font-size:38px;margin:12px 0}.paymentPage h1 span{color:#079ef1}.paymentIntro{color:#68798d}.paymentCard{max-width:700px;margin:35px auto;background:#fff;border:1px solid #dbe4ec;border-radius:12px;overflow:hidden;box-shadow:0 15px 45px #091b2b0b}.paymentAmount{background:#031a32;color:#fff;padding:30px;text-align:center}.paymentAmount small{font-size:10px;letter-spacing:1px}.paymentAmount strong{display:block;color:#079ef1;font-size:42px;margin-top:8px}.paymentMethods{padding:30px}.paymentMethods h3{margin-top:0}.paymentNotice{background:#fff8df;border:1px solid #f0d878;padding:12px;border-radius:7px;font-size:12px;color:#765c00;margin-bottom:18px}.upiBox{border:1px solid #dbe4ec;border-radius:9px;padding:20px}.upiBox p{color:#68798d;font-size:12px;line-height:1.6}.upiBox code{font-size:10px}.paymentHelp{display:flex;gap:10px;margin-top:20px}.paymentHelp .outline{font-size:10px}.paymentMethods button:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:800px){.planGrid{grid-template-columns:1fr}.tableCard{overflow-x:auto}.tableCard table{min-width:700px}.paymentPage{padding:45px 0}.paymentPage h1{font-size:30px}}
+
+.miniPlan .planActions{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap}.miniPlan .dashBuy{font-size:9px;padding:8px 10px}.miniPlan .selectPlan{padding:8px 10px}
+.enquiryMessage{margin-top:8px;padding:10px 12px;background:rgba(0,0,0,.035);border-radius:10px;line-height:1.5}.adminEnquiry{gap:16px}.planActions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.miniSocial{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;text-decoration:none}.paymentPage .addPlanForm label{display:block;margin:10px 0}.paymentPage .addPlanForm input,.paymentPage .addPlanForm textarea{width:100%;box-sizing:border-box}.paymentHelp{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.paymentNotice{margin:8px 0 14px}.paymentCard{max-width:760px;margin:auto}.upiBox{padding:18px;border:1px solid rgba(0,0,0,.08);border-radius:16px}.upiBox img{background:#fff;padding:8px}.tableScroll{overflow-x:auto}
+
+.customerDetailToolbar{display:flex;gap:12px;margin:14px 0}.customerDetailToolbar label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700}.customerDetailToolbar select{padding:10px;border:1px solid #ddd;border-radius:8px;background:#fff}.customerDetailCard{border:1px solid #e7e7e7;border-radius:12px;padding:16px}.customerDetailTop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.customerDetailTop h3{margin:0 0 5px}.detailStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.detailStats>div{padding:12px;border:1px solid #eee;border-radius:10px}.detailStats small{display:block;color:#777;margin-bottom:4px}.detailTxList{display:flex;flex-direction:column;gap:8px}.detailTx{display:flex;justify-content:space-between;gap:12px;padding:11px;border:1px solid #eee;border-radius:9px}.detailTx small{display:block;color:#777;margin-top:3px}.creditText{color:#16803a}.debitText{color:#b42318}.smallBtn.danger{border-color:#d33;background:#fff;color:#b42318}@media(max-width:700px){.detailStats{grid-template-columns:1fr}.customerDetailTop{flex-direction:column}.customerDetailTop .smallBtn{width:100%}}
+
+.orDivider{display:flex;align-items:center;gap:10px;margin:4px 0;color:#777;font-weight:700;font-size:12px}
+.orDivider:before,.orDivider:after{content:"";height:1px;background:#ddd;flex:1}
+
+.offerBanner{background:#111;color:#fff;padding:28px 0}.offerInner{display:grid;grid-template-columns:1fr minmax(280px,460px);gap:28px;align-items:center}.offerInner img{width:100%;max-height:320px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.12)}.offerInner h2{font-size:clamp(30px,5vw,54px);margin:8px 0}.offerInner p{font-size:17px;opacity:.9}.offerInner strong{display:block;margin-top:12px}@media(max-width:760px){.offerInner{grid-template-columns:1fr}.offerInner img{max-height:260px}}
+
+.referralPanel{margin-top:20px}.referralBox{display:grid;grid-template-columns:1fr 220px auto;gap:12px;align-items:end}.referralBox label{margin:0}.referralBox input{width:100%}@media(max-width:760px){.referralBox{grid-template-columns:1fr}.referralBox .btn{width:100%}}
+
+/* Admin dashboard tabs */
+.adminTabs{position:sticky;top:76px;z-index:20;display:flex;gap:8px;overflow:auto;background:#f4f7fa;padding:10px 0;margin-bottom:18px;border-bottom:1px solid #dfe7ee}
+.adminTab{flex:0 0 auto;border:1px solid #cbd9e4;background:#fff;color:#486276;border-radius:7px;padding:9px 14px;font-size:10px;font-weight:900;cursor:pointer;letter-spacing:.2px}
+.adminTab.active{background:#087fd0;color:#fff;border-color:#087fd0;box-shadow:0 6px 16px #087fd022}
+.adminTabPanel[hidden]{display:none!important}
+.adminOverviewGrid{margin-bottom:0}
+#referralLivePreview{background:#f4f9fc;border:1px solid #dceaf2;border-radius:6px;padding:9px;margin:0}
+#refMessage{min-height:80px}
+@media(max-width:700px){.adminTabs{top:76px}.adminTab{padding:8px 11px}.statGrid.adminTabPanel{grid-template-columns:1fr 1fr}}
+
+.walletHero{background:linear-gradient(135deg,#031a32,#06375b);color:#fff;border-radius:14px;padding:24px 26px;margin-bottom:18px;display:flex;justify-content:space-between;gap:20px;align-items:center;box-shadow:0 15px 40px #031a3222}.walletHero small{font-size:10px;letter-spacing:1.2px;color:#b8d1e1;font-weight:800}.walletHero strong{display:block;font-size:38px;color:#25baff;margin:7px 0}.walletHero p{margin:0;color:#c8d8e4;font-size:11px}.walletHeroMeta{display:flex;gap:10px}.walletHeroMeta>div{min-width:130px;padding:13px;border:1px solid #2b5a78;border-radius:10px;text-align:center}.walletHeroMeta span{display:block;font-size:8px;color:#b8d1e1}.walletHeroMeta b{display:block;font-size:17px;margin-top:5px}.activePlanCard{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #e1e9ef;border-radius:10px;padding:15px;margin:9px 0;background:#fbfdff}.activePlanCard h3{margin:8px 0 4px;font-size:14px}.activePlanCard small{color:#718195;font-size:10px}.activePlanCard>strong{font-size:18px}.bankForm .planEditFields,.withdrawForm .withdrawGrid{grid-template-columns:repeat(3,1fr)}.withdrawGrid{display:grid;gap:12px}.withdrawActions{display:flex;align-items:center;gap:12px;margin-top:14px}.withdrawRow,.withdrawAdminRow{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;border-top:1px solid #e7edf2;padding:15px 0}.withdrawRow:first-child,.withdrawAdminRow:first-child{border-top:0}.withdrawRow small,.withdrawAdminRow small{display:block;color:#718195;font-size:10px;margin-top:4px}.reviewReason{color:#475d70!important;background:#f5f8fb;padding:6px 8px;border-radius:6px}.withdrawAdminActions{min-width:260px;display:flex;flex-direction:column;gap:8px;align-items:stretch}.withdrawAdminActions input{width:100%;padding:9px;border:1px solid #ccd7e1;border-radius:6px;font-size:11px}.withdrawAdminActions>div{display:flex;gap:7px}.neutralText{color:#3f5b70}.creditText{color:#16803a}.debitText{color:#b42318}@media(max-width:800px){.walletHero{flex-direction:column;align-items:stretch}.walletHeroMeta{width:100%}.walletHeroMeta>div{flex:1}.bankForm .planEditFields,.withdrawForm .withdrawGrid{grid-template-columns:1fr}.withdrawRow,.withdrawAdminRow{flex-direction:column}.withdrawAdminActions{width:100%;min-width:0}.withdrawAdminActions>div{width:100%}.withdrawAdminActions button{flex:1}}
+
+/* Earnings + bank administration */
+.walletHeroMeta{grid-template-columns:repeat(4,minmax(120px,1fr));}
+.planEarnMeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.planEarnMeta span{padding:7px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa;font-size:12px;color:#666;}
+.planEarnMeta b{color:#111;}
+.bankAdminRow{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #e5e7eb;}
+.bankAdminRow:last-child{border-bottom:0;}
+@media(max-width:800px){
+  .walletHeroMeta{grid-template-columns:repeat(2,minmax(120px,1fr));}
+  .bankAdminRow{flex-direction:column;}
+}
+
+/* Home page CMS editor + responsive public menu */
+.menuEditorRow{display:grid;grid-template-columns:70px 1fr 1.4fr 90px auto;gap:10px;align-items:end;padding:12px 0;border-bottom:1px solid #e7edf2}
+.menuEditorRow label{margin:0}.menuEditorRow input{width:100%;margin-top:5px}.menuOrder{display:flex;gap:5px}.menuMove{border:1px solid #cbd9e4;background:#fff;color:#486276;border-radius:5px;padding:7px 10px;cursor:pointer}.menuMove:disabled{opacity:.35;cursor:not-allowed}.menuEnabled{display:flex!important;align-items:center;gap:7px;height:42px}.menuEnabled input{width:auto;margin:0}.menuEditorActions{display:flex;align-items:center;gap:12px;margin-top:15px}
+@media(max-width:850px){.siteHeader .nav{gap:12px}.siteHeader nav{gap:14px}.siteHeader nav a{font-size:9px}.menuEditorRow{grid-template-columns:1fr 1fr;align-items:end}.menuOrder{grid-column:1 / -1}.menuEnabled{height:auto!important}.menuEditorRow>.danger{width:max-content}}
+@media(max-width:700px){.siteHeader{height:68px}.siteHeader .nav{position:relative}.siteHeader nav{display:none;position:absolute;left:0;right:0;top:68px;background:#03101f;border:1px solid #17324b;border-top:0;padding:8px 14px;flex-direction:column;gap:0;z-index:50}.siteHeader nav.mobileOpen{display:flex}.siteHeader nav a{padding:13px 5px;font-size:10px}.siteHeader .nav>div:last-of-type{margin-left:auto}.siteHeader .nav>div:last-of-type .outline{display:none}.siteHeader .nav>div:last-of-type .btn{padding:9px 11px}.hamb{display:block}.menuEditorRow{grid-template-columns:1fr}.menuOrder{grid-column:auto}.menuEditorActions{align-items:flex-start;flex-direction:column}}
+
+
+/* Customer dashboard: compact card layout (no tabs). */
+@media (min-width: 900px){
+  .dashboard{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:18px;
+    align-items:start;
+  }
+  .dashboard > .welcome,
+  .dashboard > .walletHero,
+  .dashboard > .dashGrid,
+  .dashboard > .panelWide{
+    grid-column:1 / -1;
+  }
+  .dashboard > .panel{
+    margin:0;
+  }
+  .dashboard > .panel:not(.panelWide){
+    min-height:100%;
+  }
+}
+@media (max-width: 899px){
+  .dashboard > .panelWide,
+  .dashboard > .panel{
+    margin-bottom:14px;
+  }
+}
+.dashboard .panelHead h2{font-size:18px}
+.dashboard .panel{scroll-margin-top:90px}
+
+
+/* Final admin tabs layout fix: keep navigation and tab content in a clean single column. */
+.dashBody .dashboard{display:block!important;grid-template-columns:none!important}
+.dashBody .adminTabs{display:flex!important;width:100%;clear:both;align-items:center}
+.dashBody .adminTabPanel{width:100%}
+.dashBody .statGrid.adminTabPanel{display:grid;width:100%}
+.dashBody .adminOverviewGrid{display:grid;width:100%}
+@media(max-width:899px){.dashBody .adminOverviewGrid{grid-template-columns:1fr}.dashBody .statGrid.adminTabPanel{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.dashBody .statGrid.adminTabPanel{grid-template-columns:1fr}.dashBody .adminTabs{gap:6px}}
+
+/* Admin UI refresh — tabs-first, compact and mobile friendly */
+body.dashBody{background:#f5f8fb}
+.dashBody .dashboard{padding-top:28px}
+.dashBody .welcome{background:#fff;border:1px solid #e1e8ee;border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 5px 20px rgba(10,45,70,.04)}
+.dashBody .welcome h1{font-size:28px}
+.adminTabs{top:68px!important;background:rgba(245,248,251,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:8px 0;margin-bottom:16px;border-bottom:1px solid #dbe5ec;scrollbar-width:none}
+.adminTabs::-webkit-scrollbar{display:none}
+.adminTab{min-height:38px;border:1px solid #d5e0e8;background:#fff;color:#52697a;border-radius:9px;padding:9px 15px;font-size:10px;letter-spacing:.35px;transition:.16s ease;box-shadow:0 2px 7px rgba(15,45,65,.04)}
+.adminTab:hover{border-color:#8fc3df;color:#087dbb;transform:translateY(-1px)}
+.adminTab.active{background:#087fd0;color:#fff;border-color:#087fd0;box-shadow:0 7px 18px rgba(8,127,208,.18)}
+.adminTabPanel{animation:adminPanelIn .16s ease-out}
+@keyframes adminPanelIn{from{opacity:.65;transform:translateY(2px)}to{opacity:1;transform:none}}
+.statGrid.adminTabPanel{margin-bottom:16px}
+.statGrid>div{box-shadow:0 4px 16px rgba(15,45,65,.035)}
+.adminGrid{align-items:start}
+.panel{box-shadow:0 4px 18px rgba(15,45,65,.035)}
+.adminTabPanel .panelHead{padding-bottom:2px}
+.adminTabPanel .panelHead h2{font-size:15px}
+.customerDetailToolbar{background:#f8fafc;border:1px solid #e3eaf0;border-radius:10px;padding:12px}
+.customerDetailToolbar select{min-height:38px}
+#settingsPanel,#navigationEditorPanel,#aboutEditorPanel,#earnCardEditorPanel,#referralsPanel,#offersPanel{margin-bottom:16px}
+.siteSettingsForm{max-width:900px}
+@media(max-width:900px){.dashBody .welcome{align-items:flex-start}.adminGrid{gap:14px}.panel{padding:16px}}
+@media(max-width:600px){.dashBody .dashboard{padding-top:18px}.dashBody .welcome{padding:16px}.dashBody .welcome h1{font-size:24px}.adminTabs{top:62px!important;margin-left:-14px;margin-right:-14px;padding:8px 14px}.adminTab{padding:8px 12px;min-height:36px}.statGrid.adminTabPanel{grid-template-columns:1fr 1fr}.statGrid>div{padding:15px}.statGrid strong{font-size:20px}}
+
+/* Customer details popup */
+.customerPopup{position:fixed;inset:0;display:none;z-index:9999}.customerPopup.open{display:block}.customerPopupBackdrop{position:absolute;inset:0;background:rgba(15,23,42,.58);backdrop-filter:blur(2px)}.customerPopupDialog{position:relative;width:min(960px,calc(100% - 28px));max-height:calc(100vh - 36px);overflow:auto;margin:18px auto;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.25);padding:20px}.customerPopupHead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;position:sticky;top:-20px;background:#fff;padding:4px 0 14px;z-index:2;border-bottom:1px solid #edf0f3}.customerPopupHead h2{margin:0 0 4px}.customerPopupClose{border:0;background:#f1f3f5;border-radius:10px;width:38px;height:38px;font-size:24px;cursor:pointer}.customerPopupSummary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.customerPopupSummary>div{border:1px solid #e8edf2;border-radius:12px;padding:13px;background:#fafbfc}.customerPopupSummary small,.customerInfoGrid small{display:block;color:#77808a;font-size:10px;font-weight:800;letter-spacing:.06em;margin-bottom:5px}.customerPopupSummary b{font-size:19px}.customerInfoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.customerInfoGrid>div{border:1px solid #e8edf2;border-radius:10px;padding:11px;background:#fff}.monoText{font-size:11px;word-break:break-all}.detailPlanList{display:flex;flex-direction:column;gap:8px;margin:10px 0 18px}.detailPlan{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid #e8edf2;border-radius:10px;padding:11px}.detailPlan small{display:block;color:#777;margin-top:3px}.customerActionRow,.popupActions{display:flex;gap:8px;flex-wrap:wrap}.popupActions{justify-content:flex-end;margin-top:18px;padding-top:15px;border-top:1px solid #edf0f3}.editCustomerForm{max-width:600px}.editCustomerForm label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:12px;margin:12px 0}.editCustomerForm input{padding:11px;border:1px solid #d8dee5;border-radius:9px;font:inherit}.editCustomerForm input:disabled{background:#f3f4f6;color:#777}.bankGrid{margin-bottom:18px}
+@media(max-width:700px){.customerPopupDialog{width:calc(100% - 16px);max-height:calc(100vh - 16px);margin:8px auto;padding:14px}.customerPopupHead{top:-14px}.customerInfoGrid,.customerPopupSummary{grid-template-columns:1fr}.customerActionRow .smallBtn,.popupActions .smallBtn{flex:1}.detailPlan{align-items:flex-start}}
+
+.withdrawAdminToolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.withdrawAdminToolbar select{padding:7px 10px;font-size:10px}.withdrawSummaryPill{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;font-size:9px;font-weight:800;margin-right:4px;background:#eef3f7;color:#4d6273}.withdrawSummaryPill.pending{background:#fff7df;color:#9a6800}.withdrawSummaryPill.approved{background:#e9f8ef;color:#167744}.withdrawSummaryPill.rejected{background:#fff0f0;color:#b42318}.withdrawAdminMain{min-width:0;flex:1}.withdrawAmount{display:flex;align-items:center;gap:9px;margin-bottom:5px}.withdrawAmount>b{font-size:17px}.withdrawStatus{font-size:8px;font-weight:900;padding:4px 7px;border-radius:999px}.withdrawStatus.pending{background:#fff4cf;color:#916000}.withdrawStatus.approved{background:#e8f7ee;color:#14733e}.withdrawStatus.rejected{background:#ffeded;color:#b42318}.withdrawAdminRow{background:#fff}.withdrawAdminRow+.withdrawAdminRow{margin-top:0}
+
+.planAdminControls{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-top:10px;padding-top:10px;border-top:1px solid rgba(127,127,127,.18)}
+.planAdminControls label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700}
+.planAdminControls input,.planAdminControls select{min-width:120px;padding:8px;border:1px solid #d8d8d8;border-radius:8px;background:var(--card,#fff)}
+.planAdminControls .maturityDaysWrap input{min-width:85px}
+.planAdminControls .investmentTermsMsg{font-size:12px;min-width:70px}
+
+/* Investment eligibility feedback */
+.investmentOverrideMsg{display:block;margin-top:14px;padding:13px 16px;border-radius:9px;font-size:14px!important;font-weight:900!important;line-height:1.45;min-height:0}
+.investmentOverrideMsg.error{background:#fff0f0;border:2px solid #dc2626;color:#b91c1c;box-shadow:0 3px 12px rgba(220,38,38,.12)}
+.investmentOverrideMsg.success{background:#ecfdf3;border:2px solid #16a34a;color:#15803d}
+
+.earningCountdownCard{display:flex;align-items:center;gap:16px;padding:18px 20px;margin:0 0 18px;border:1px solid #cfe2ee;border-radius:14px;background:linear-gradient(135deg,#f6fbff,#ffffff);box-shadow:0 8px 24px #12345612}.earningClockIcon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #25baff;color:#168bc5;font-size:25px;font-weight:800;flex:none}.earningCountdownBody small{display:block;font-size:9px;letter-spacing:1.2px;color:#688095;font-weight:800}.earningCountdownBody strong{display:block;font-size:25px;line-height:1.15;margin:4px 0;color:#123b56}.earningCountdownBody span{display:block;color:#718195;font-size:11px}@media(max-width:600px){.earningCountdownCard{padding:14px}.earningCountdownBody strong{font-size:20px}}
+
+
+/* Customer dashboard — wallet summary cards */
+.walletHeroMeta{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(150px,1fr));
+  gap:12px;
+  width:min(100%,760px);
+  align-items:stretch;
+}
+.walletHeroMeta>div{
+  min-width:0;
+  min-height:82px;
+  padding:14px 12px;
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:12px;
+  text-align:center;
+  background:rgba(255,255,255,.08);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.walletHeroMeta span{
+  display:block;
+  font-size:10px;
+  line-height:1.25;
+  color:#d8e9f4;
+  font-weight:900;
+  letter-spacing:.7px;
+  white-space:nowrap;
+}
+.walletHeroMeta b{
+  display:block;
+  font-size:20px;
+  line-height:1.2;
+  margin-top:7px;
+  color:#fff;
+  font-weight:900;
+}
+.walletHeroMeta #earningCountdown,
+.walletHeroMeta #earningCountdownMeta{
+  font-weight:800;
+}
+.walletHeroMeta #earningCountdown{
+  font-size:11px !important;
+  color:#fff;
+}
+.walletHeroMeta #earningCountdownMeta{
+  font-size:10px !important;
+  color:#d8e9f4;
+}
+.walletHeroMeta #earningCountdownMeta strong{
+  color:#fff;
+  font-size:10px;
+  margin:0;
+}
+@media(max-width:1050px){
+  .walletHeroMeta{
+    grid-template-columns:repeat(2,minmax(150px,1fr));
+  }
+}
+@media(max-width:800px){
+  .walletHeroMeta{
+    width:100%;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+  .walletHeroMeta>div{
+    min-height:76px;
+    padding:11px 8px;
+  }
+  .walletHeroMeta span{
+    font-size:9px;
+  }
+  .walletHeroMeta b{
+    font-size:18px;
+  }
+}
+@media(max-width:480px){
+  .walletHeroMeta{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Final polish: keep earning countdown details inside the EARNED AMOUNT frame. */
+.walletHeroMeta{
+  display:grid;
+  grid-template-columns:1fr 1.38fr 1fr 1fr;
+  gap:10px;
+  align-items:stretch;
+}
+.walletHeroMeta>div{
+  min-width:0;
+  overflow:hidden;
+}
+.walletHeroMeta>div:nth-child(2){
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:12px 10px;
+}
+.walletHeroMeta>div:nth-child(2) #earningCountdown{
+  width:100%;
+  margin-top:6px !important;
+  white-space:nowrap;
+  line-height:1.2;
+  font-size:11px !important;
+}
+.walletHeroMeta>div:nth-child(2) #earningCountdownMeta{
+  width:100%;
+  margin-top:4px !important;
+  line-height:1.25 !important;
+  overflow-wrap:anywhere;
+}
+.walletHeroMeta>div:nth-child(2) #earningCountdownMeta strong{
+  display:block;
+  font-size:10px !important;
+  line-height:1.2;
+  margin:0;
+}
+.walletHeroMeta>div:nth-child(2) #earningCountdownMeta span{
+  display:block !important;
+  margin-top:3px !important;
+  font-size:9px !important;
+  line-height:1.25 !important;
+  white-space:normal;
+}
+@media(max-width:1050px){
+  .walletHeroMeta{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:800px){
+  .walletHeroMeta{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:480px){
+  .walletHeroMeta{grid-template-columns:1fr;}
+}
+
+
+/* Bank account: locked saved card + add modal */
+.bankSavedCard{border:1px solid #dce6ee;border-radius:12px;padding:15px;background:#fbfdff;margin-bottom:12px}
+.bankSavedTop{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #e7edf2;padding-bottom:11px;margin-bottom:11px}
+.bankSavedTop span,.bankSavedGrid small{display:block;color:#718195;font-size:9px;font-weight:900;letter-spacing:.06em;margin-bottom:4px}
+.bankSavedTop b,.bankSavedGrid b{font-size:13px;color:#10243a}
+.bankSavedTop>strong{font-size:10px;color:#16803a;border:1px solid #a9d9b8;background:#effaf2;border-radius:999px;padding:6px 9px;white-space:nowrap}
+.bankSavedGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.bankSavedGrid>div{border:1px solid #e8edf2;border-radius:9px;padding:9px;background:#fff}
+.bankLockedNote{margin:11px 0 0;color:#718195;font-size:10px}
+.bankModal{position:fixed;inset:0;display:none;z-index:10000}
+.bankModal.open{display:block}
+.bankModalBackdrop{position:absolute;inset:0;background:rgba(15,23,42,.62);backdrop-filter:blur(3px)}
+.bankModalDialog{position:relative;width:min(760px,calc(100% - 28px));max-height:calc(100vh - 34px);overflow:auto;margin:17px auto;background:#fff;border-radius:16px;box-shadow:0 25px 80px rgba(0,0,0,.28);padding:21px}
+.bankModalHead{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;border-bottom:1px solid #edf0f3;padding-bottom:14px;margin-bottom:15px}
+.bankModalHead h2{margin:3px 0 5px;font-size:22px}
+.bankModalHead p{margin:0}
+.bankModalClose{border:0;background:#f1f3f5;border-radius:10px;width:38px;height:38px;font-size:25px;cursor:pointer;line-height:1}
+.bankModalDialog .planEditFields{grid-template-columns:repeat(2,1fr)}
+.bankModalDialog label{position:relative}
+.bankModalDialog input{width:100%;box-sizing:border-box}
+.bankModalDialog input[readonly]{background:#f4f7f9;color:#34495a}
+.ifscStatus{display:block;margin-top:5px;font-size:10px;color:#718195;font-weight:700;min-height:14px}
+.ifscStatus.ok{color:#16803a}.ifscStatus.bad{color:#b42318}
+.bankModalActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.bankModalActions .smallBtn{min-width:145px}
+.bankModalActions .secondaryBtn{background:#eef7fc;color:#075985;border-color:#b9d9ea}
+.bankModalActions .ghostBtn{background:#fff;color:#516170}
+.bankModalActions .smallBtn:disabled{opacity:.5;cursor:not-allowed}
+.bankMsg{margin:10px 0 0;font-size:11px;font-weight:700;min-height:16px}
+@media(max-width:700px){.bankSavedGrid,.bankModalDialog .planEditFields{grid-template-columns:1fr}.bankModalDialog{width:calc(100% - 16px);max-height:calc(100vh - 16px);margin:8px auto;padding:15px}.bankModalActions .smallBtn{flex:1;min-width:120px}.bankSavedTop{align-items:flex-start}}
+
+.withdrawGrid select{width:100%;padding:10px;border:1px solid #ccd7e1;border-radius:7px;background:#fff;font:inherit;font-size:11px}.withdrawGrid label{display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:700}
+
+/* V17 wallet statement */
+.walletStatementActions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.walletBreakdown{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:8px}.walletBreakdown>div{padding:14px;border:1px solid #e2e9ef;border-radius:10px;background:#f8fbfd}.walletBreakdown small{display:block;color:#718195;font-size:10px;letter-spacing:.5px}.walletBreakdown b{display:block;margin-top:5px;font-size:18px}.walletHistoryTabs{display:flex;gap:7px;margin:12px 0}.walletTab{border:1px solid #d3dfe8;background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer;font-weight:700;color:#496276}.walletTab.active{background:#0b8fe8;color:#fff;border-color:#0b8fe8}.walletStatementRow{border-top:1px solid #e7edf2;padding:13px 0}.walletStatementRow:first-child{border-top:0}@media(max-width:700px){.walletBreakdown{grid-template-columns:1fr}.walletStatementActions{flex-direction:column}.walletStatementActions button{width:100%}}
+
+
+/* V21 layout polish: phone + tablet + consistent admin sizing */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg{max-width:100%;height:auto}
+button,.btn,.outline,.smallBtn,.payBtn,.miniSocial{touch-action:manipulation}
+
+/* Public/home plans: stop action buttons/icons from drifting on small screens. */
+.planActions{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:nowrap;min-width:0}
+.planActions .payBtn{white-space:nowrap;flex:0 0 auto}
+.planActions .miniSocial{flex:0 0 34px;width:34px;height:34px}
+@media(max-width:900px){
+  .container{width:min(100% - 32px,1180px)}
+  .heroGrid{grid-template-columns:1fr;gap:20px;padding:36px 0}
+  .hero{height:auto;min-height:0;padding-bottom:35px}
+  .serverArt{height:260px}
+  .featureGrid{grid-template-columns:repeat(2,1fr)}
+  .metricGrid{grid-template-columns:repeat(2,1fr)}
+  .metricGrid>div{border-bottom:1px solid #29445e;padding:10px 0}
+  .split,.contactGrid{grid-template-columns:1fr;gap:30px}
+  .growthInner{gap:20px;align-items:flex-start;flex-direction:column}
+  .planGrid{grid-template-columns:1fr}
+  .earnCard{min-height:240px}
+  .paymentPage{padding:30px 0}
+}
+@media(max-width:700px){
+  .container{width:calc(100% - 24px)}
+  .hero h1{font-size:34px;letter-spacing:-1.5px}
+  .hero h2{font-size:15px}
+  .actions{flex-direction:column;align-items:stretch}
+  .actions .btn,.actions .outline{text-align:center}
+  .trust{gap:10px;flex-wrap:wrap}
+  .trust span{padding-right:10px}
+  .section{padding:48px 0}
+  .sectionHead h2{font-size:25px}
+  .featureGrid{grid-template-columns:1fr}
+  .metricGrid{grid-template-columns:1fr 1fr}
+  .footerGrid{grid-template-columns:1fr 1fr;gap:22px}
+  .paymentCard{width:100%}
+  .paymentMethods{padding:18px}
+  .paymentAmount{padding:22px 16px}
+  .paymentAmount strong{font-size:34px}
+  .paymentHelp{flex-direction:column}
+  .paymentHelp .outline{width:100%;text-align:center}
+  .tableCard{overflow:visible;border:0;background:transparent}
+  .tableCard table,.tableCard tbody{display:block;width:100%;min-width:0}
+  .tableCard thead{display:none}
+  .tableCard tr{display:grid;grid-template-columns:1fr auto;gap:8px 12px;background:#fff;border:1px solid #dbe4ec;border-radius:12px;margin-bottom:10px;padding:13px;box-shadow:0 5px 16px rgba(10,45,70,.05)}
+  .tableCard td{display:block;border:0;padding:2px 0;text-align:left;font-size:12px}
+  .tableCard td:nth-child(1){grid-column:1/-1;font-size:15px;color:#10243a}
+  .tableCard td:nth-child(2),.tableCard td:nth-child(3),.tableCard td:nth-child(4){font-size:11px;color:#52697a}
+  .tableCard td:nth-child(5){grid-column:1/-1;padding-top:8px;border-top:1px solid #edf1f4}
+  .tableCard td:nth-child(5) .planActions{justify-content:flex-start;flex-wrap:wrap}
+  .tableCard td:nth-child(5) .payBtn{flex:1;min-width:140px;text-align:center}
+  .tableCard td:nth-child(5) .miniSocial{width:38px;height:38px;flex-basis:38px}
+  .miniPlan{align-items:flex-start;gap:10px}
+  .miniPlan .planActions{justify-content:flex-end;flex-wrap:wrap}
+  .miniPlan .planActions .dashBuy{flex:1;min-width:105px;text-align:center}
+  .walletHero{padding:18px 16px}
+  .walletHero strong{font-size:34px}
+  .walletHeroMeta{grid-template-columns:1fr 1fr!important;width:100%!important}
+  .walletHeroMeta>div{min-height:72px!important;padding:10px 7px!important}
+  .walletHeroMeta span{white-space:normal;font-size:8px!important}
+  .walletHeroMeta b{font-size:17px!important}
+  .walletHeroMeta>div:nth-child(2) #earningCountdown{white-space:normal!important;font-size:10px!important}
+  .walletHeroMeta>div:nth-child(2) #earningCountdownMeta span{font-size:8px!important}
+  .dashboard{padding:20px 0}
+}
+@media(max-width:420px){
+  .walletHeroMeta{grid-template-columns:1fr!important}
+  .walletHeroMeta>div:nth-child(2){min-height:86px!important}
+  .footerGrid{grid-template-columns:1fr}
+  .brand{font-size:20px}
+}
+
+/* Admin: one predictable content column; cards resize instead of becoming oversized. */
+.dashBody .dashboard{width:min(1180px,calc(100% - 32px));margin:0 auto}
+.dashBody .welcome{width:100%;min-height:120px}
+.dashBody .statGrid.adminTabPanel{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dashBody .adminOverviewGrid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:14px}
+.dashBody .panel{min-width:0;overflow:hidden}
+.dashBody .adminTable{min-width:680px}
+.dashBody .adminTabs{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.dashBody .customerDetailToolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;align-items:end}
+.dashBody .customerDetailToolbar label{min-width:0!important}
+.dashBody .customerDetailToolbar input,.dashBody .customerDetailToolbar select{width:100%;min-width:0}
+.dashBody .planEditFields{min-width:0}
+@media(max-width:1050px){
+  .dashBody .statGrid.adminTabPanel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dashBody .adminOverviewGrid{grid-template-columns:1fr}
+  .dashBody .customerDetailToolbar{grid-template-columns:1fr 1fr}
+  .dashBody .customerDetailToolbar button{width:100%}
+}
+@media(max-width:700px){
+  .dashBody .dashboard{width:calc(100% - 20px);padding-top:14px}
+  .dashBody .welcome{padding:15px!important;min-height:0;align-items:flex-start;gap:12px;flex-direction:column}
+  .dashBody .welcome h1{font-size:23px!important}
+  .dashBody .welcome .btn{width:100%;text-align:center}
+  .dashBody .statGrid.adminTabPanel{grid-template-columns:1fr 1fr;gap:9px}
+  .dashBody .statGrid>div{padding:13px!important}
+  .dashBody .statGrid strong{font-size:18px!important}
+  .dashBody .adminTabs{position:sticky;top:68px!important;margin-left:0;margin-right:0;padding:8px 0}
+  .dashBody .adminTab{padding:8px 11px;min-height:36px}
+  .dashBody .customerDetailToolbar{grid-template-columns:1fr;gap:10px}
+  .dashBody .customerDetailToolbar button{width:100%}
+  .dashBody .panel{padding:14px!important;border-radius:11px}
+  .dashBody .panelHead{gap:10px;align-items:flex-start;flex-wrap:wrap}
+  .dashBody .panelHead h2{font-size:14px!important}
+  .dashBody .tableScroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .dashBody .detailPlan{display:grid;grid-template-columns:1fr;gap:8px}
+  .dashBody .planAdminControls{display:grid;grid-template-columns:1fr}
+  .dashBody .planAdminControls label,.dashBody .planAdminControls input,.dashBody .planAdminControls select{width:100%;min-width:0}
+}
+@media(max-width:430px){
+  .dashBody .statGrid.adminTabPanel{grid-template-columns:1fr}
+  .dashBody .dashRight{gap:7px}
+  .dashBody .adminBadge{display:none}
+  .dashBody .logout{padding:7px 9px;font-size:10px}
+}
+
+/* V23 notification click reliability */
+.adminNotificationItem{cursor:pointer;position:relative;z-index:2;pointer-events:auto}
+.adminNotificationItem:hover{transform:translateY(-1px)}
+
+
+/* V24 — notification panel/click hardening */
+.adminNotificationPanel{
+  position:fixed;
+  top:72px;
+  right:22px;
+  width:min(390px,calc(100vw - 30px));
+  max-height:min(70vh,620px);
+  overflow:auto;
+  z-index:99999;
+  background:#fff;
+  border:1px solid #d9e3eb;
+  border-radius:12px;
+  box-shadow:0 18px 45px rgba(20,45,70,.18);
+}
+.adminNotificationHead{
+  position:sticky;
+  top:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:13px 15px;
+  background:#fff;
+  border-bottom:1px solid #e7edf2;
+}
+.adminNotificationItem{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  padding:13px 15px;
+  border:0;
+  border-bottom:1px solid #edf1f4;
+  background:#fff;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  user-select:none;
+  text-align:left;
+}
+.adminNotificationItem.unread{background:#f5faff}
+.adminNotificationItem:hover{background:#eef7ff;transform:none}
+.adminNotificationItem b,.adminNotificationItem div,.adminNotificationItem small{
+  pointer-events:none;
+}
+@media(max-width:600px){
+  .adminNotificationPanel{
+    top:62px;
+    right:10px;
+    width:calc(100vw - 20px);
+    max-height:72vh;
+  }
+}
+
+/* V27 visitor analytics */
+.visitorStatGrid{grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 18px}.visitorStatGrid>div{padding:14px;background:#f7fafc;border:1px solid #e5ebf0;border-radius:8px}.visitorStatGrid strong{font-size:20px}.adminTable td,.adminTable th{white-space:nowrap}
+@media(max-width:600px){.visitorStatGrid{grid-template-columns:1fr 1fr}.visitorStatGrid>div{padding:12px}}
+
+/* V28 visitor tab: compact, sorted visitor selector and details card */
+.visitorAnalyticsTabPanel .visitorActions{display:flex;align-items:flex-end;gap:10px}.visitorSelectLabel{min-width:360px;font-size:12px;font-weight:700;display:flex;flex-direction:column;gap:6px}.visitorSelectLabel select{min-height:40px;border:1px solid #dce4ea;border-radius:8px;padding:8px 10px;background:#fff}.visitorDetailCard{border:1px solid #e5ebf0;border-radius:10px;padding:16px;background:#fff}.visitorDetailHead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.visitorDetailHead h3{margin:0 0 4px}.visitorStatus{font-size:12px;font-weight:700}.visitorStatus.active{font-weight:800}.visitorMetaGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}.visitorMetaGrid>div{padding:12px;background:#f7fafc;border:1px solid #e5ebf0;border-radius:8px;min-width:0}.visitorMetaGrid small{display:block;margin-bottom:5px}.visitorMetaGrid b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.visitorPageHistory{border-top:1px solid #e5ebf0;padding-top:12px}.visitorPageHistory .panelHead{margin-bottom:8px}.visitorPageHistory .adminTable td,.visitorPageHistory .adminTable th{white-space:nowrap}.visitorStatGrid{grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 18px}.visitorStatGrid>div{padding:14px;background:#f7fafc;border:1px solid #e5ebf0;border-radius:8px}.visitorStatGrid strong{font-size:20px}
+@media(max-width:900px){.visitorAnalyticsTabPanel .visitorActions{width:100%;flex-wrap:wrap}.visitorSelectLabel{min-width:260px;flex:1}.visitorMetaGrid{grid-template-columns:1fr 1fr}.visitorStatGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.visitorAnalyticsTabPanel .panelHead{align-items:stretch;flex-direction:column}.visitorAnalyticsTabPanel .visitorActions{align-items:stretch}.visitorSelectLabel{min-width:0;width:100%}.visitorAnalyticsTabPanel .visitorActions .smallBtn{width:100%}.visitorMetaGrid{grid-template-columns:1fr}.visitorDetailCard{padding:12px}}
+
+/* V29 FINAL MOBILE + TABLET OPTIMIZATION
+   Keeps desktop layout intact while preventing squeeze/overflow on touch screens. */
+.dashBody .dashHeader .container{min-width:0}
+.dashBody .dashRight{min-width:0;flex-wrap:wrap}
+.dashBody .adminTabs{-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}
+.dashBody .adminTabs::-webkit-scrollbar{display:none}
+.dashBody .adminTab{flex:0 0 auto}
+.dashBody .panelHead>div{min-width:0}
+.dashBody .panelHead .muted{display:block;overflow-wrap:anywhere}
+.dashBody .tableScroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.dashBody .adminTable{width:100%;min-width:680px}
+.dashBody input,.dashBody select,.dashBody textarea{max-width:100%;box-sizing:border-box}
+
+@media (max-width:900px){
+  .dashBody .dashHeader .container{width:calc(100% - 28px)}
+  .dashBody .dashRight{gap:8px}
+  .dashBody .adminTabs{margin-top:8px}
+  .dashBody .adminOverviewGrid{gap:12px}
+  .dashBody .planEditFields{grid-template-columns:1fr 1fr}
+  .dashBody .withdrawAdminToolbar{display:flex;flex-wrap:wrap;gap:8px}
+  .dashBody .withdrawAdminToolbar select,.dashBody .withdrawAdminToolbar .smallBtn{min-width:130px}
+  .visitorAnalyticsTabPanel .visitorSelectLabel{min-width:220px}
+}
+
+@media (max-width:700px){
+  .dashBody .dashHeader{min-height:64px;height:auto}
+  .dashBody .dashHeader .container{padding:10px 0;align-items:center}
+  .dashBody .brand{min-width:0;line-height:1}
+  .dashBody .brand small{display:block;font-size:7px;letter-spacing:.8px;white-space:nowrap}
+  .dashBody .dashRight{margin-left:auto;justify-content:flex-end}
+  .dashBody .dashRight .logout{padding:8px 9px;font-size:10px}
+  .dashBody .adminNotifyBtn{width:34px;height:34px;flex:0 0 34px}
+  .dashBody .dashboard{width:calc(100% - 20px);max-width:none}
+  .dashBody .welcome p{font-size:11px;line-height:1.5}
+  .dashBody .adminTabs{position:sticky;z-index:40;background:inherit;max-width:100vw;overflow-x:auto;gap:6px;padding:8px 2px;margin-left:0;margin-right:0}
+  .dashBody .adminTab{font-size:10px;padding:9px 11px;border-radius:8px}
+  .dashBody .panel{overflow:hidden}
+  .dashBody .panelHead{width:100%}
+  .dashBody .panelHead h2{line-height:1.3}
+  .dashBody .planEditFields{grid-template-columns:1fr!important}
+  .dashBody .addPlanForm{width:100%;box-sizing:border-box}
+  .dashBody .addPlanForm>div{max-width:100%}
+  .dashBody .withdrawAdminToolbar{width:100%}
+  .dashBody .withdrawAdminToolbar select,.dashBody .withdrawAdminToolbar .smallBtn{flex:1;min-width:0;width:100%}
+  .dashBody .adminTable{min-width:620px}
+  .visitorAnalyticsTabPanel .visitorActions{width:100%}
+  .visitorAnalyticsTabPanel .visitorActions .smallBtn{min-height:40px}
+  .visitorSelectLabel select{font-size:12px;min-height:42px}
+  .visitorDetailHead{align-items:flex-start;flex-direction:column}
+  .visitorMetaGrid{grid-template-columns:1fr 1fr}
+  .visitorMetaGrid b{white-space:normal;overflow-wrap:anywhere}
+  .visitorPageHistory .tableScroll{margin-left:-2px;margin-right:-2px;width:calc(100% + 4px)}
+}
+
+@media (max-width:430px){
+  .dashBody .brand{font-size:18px}
+  .dashBody .brand small{font-size:6px}
+  .dashBody .dashRight .logout{font-size:9px;padding:8px 7px}
+  .dashBody .adminNotifyBtn{width:32px;height:32px;flex-basis:32px}
+  .dashBody .welcome .btn{font-size:11px}
+  .dashBody .statGrid.adminTabPanel{grid-template-columns:1fr 1fr}
+  .dashBody .statGrid>div{min-width:0}
+  .dashBody .statGrid small{font-size:8px}
+  .dashBody .statGrid strong{font-size:17px!important}
+  .visitorStatGrid{grid-template-columns:1fr 1fr!important}
+  .visitorMetaGrid{grid-template-columns:1fr!important}
+}
+
+/* V30 phone validation hint */
+.fieldHint{display:block;margin-top:6px;font-size:12px;line-height:1.4;opacity:.72}
+
+/* V32 investment agreement */
+.agreementCheck{display:flex!important;align-items:flex-start;gap:10px;line-height:1.45}.agreementCheck input{width:auto!important;margin-top:3px}.agreementRow{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid #e7edf3}.agreementRow:last-child{border-bottom:0}.agreementRow>div{display:grid;gap:4px}.agreementRow small{opacity:.72}.agreementDoc{max-width:900px;margin:30px auto;background:#fff;padding:42px;border:1px solid #e1e8ef;border-radius:16px;box-shadow:0 12px 40px rgba(20,40,60,.08)}.agreementDoc h1{margin:0 0 6px}.agreementDoc h2{margin-top:28px}.agreementMeta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0}.agreementMeta div{padding:12px;border:1px solid #e4eaf0;border-radius:10px}.agreementMeta small{display:block;opacity:.65;margin-bottom:4px}.agreementActions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.agreementNotice{padding:14px;border-radius:10px;background:#f6f9fc;border:1px solid #dfe8f0}.agreementTable{width:100%;border-collapse:collapse}.agreementTable th,.agreementTable td{padding:10px;border:1px solid #e1e7ed;text-align:left;vertical-align:top}.agreementFooter{margin-top:30px;padding-top:18px;border-top:1px solid #e1e7ed;font-size:12px;opacity:.7}@media(max-width:640px){.agreementRow{align-items:flex-start;flex-direction:column}.agreementDoc{margin:12px;padding:22px;border-radius:12px}.agreementMeta{grid-template-columns:1fr}.agreementTable{font-size:13px}.agreementActions .btn,.agreementActions .smallBtn{width:100%;text-align:center}}@media print{body{background:#fff!important}.agreementDoc{margin:0;padding:0;border:0;box-shadow:none;max-width:none}.agreementActions,.siteHeader,.noPrint{display:none!important}.agreementDoc h1{font-size:24px}}
